@@ -3,7 +3,7 @@
     // =============================================================================
        const questions = [
             
-    // ==================== LESSON 1 ====================
+// ==================== LESSON 1 ====================
   {"lesson": 1, "id": "1-1a", "text": "おなまえは なんですか。/ なまえを いってください/ おしえてください。", "viText": "Tên bạn là gì? / Hãy nói tên bạn / Hãy cho tôi biết tên bạn.", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/1.1a.mp3"},
   {"lesson": 1, "id": "1-2a", "text": "しゅっしんは どちらですか。/どこですか。", "viText": "Quê quán của bạn ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/1.2a.mp3"},
   {"lesson": 1, "id": "1-3a", "text": "おいくつ ですか。/ なんさい ですか。", "viText": "Bạn bao nhiêu tuổi?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/1.3a.mp3"},
@@ -14,7 +14,7 @@
   {"lesson": 1, "id": "1-8a", "text": "〇〇さんは、リキ<ruby>日本語<rt>にほんご</rt></ruby>センター/ドンズー<ruby>日本語<rt>にほんご</rt></ruby>センターのじっしゅうせいですか。", "viText": "Bạn 〇〇 là thực tập sinh của Trung tâm tiếng Nhật Riki / Dong Du phải không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/1.8a.mp3"},
   {"lesson": 1, "id": "1-9", "text": "〇〇さんは どこの センターの じっしゅうせいですか。", "viText": "Bạn 〇〇 là thực tập sinh của trung tâm nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/1.9.mp3"},
   {"lesson": 1, "id": "1-10a", "text": "〇〇さんは ベトナムじん/ちゅうごくじん/かんこくじんですか。", "viText": "Bạn 〇〇 là người Việt Nam / người Trung Quốc / người Hàn Quốc phải không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/1.10a.mp3"},
-           // ==================== LESSON 2 ====================
+// ==================== LESSON 2 ====================
            {"lesson": 2, "id": "2-1", "text": "<ruby>仕事<rt>しごと</rt></ruby>は なんですか。", "viText": "Công việc của bạn là gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/2.1.mp3"},
            {"lesson": 2, "id": "2-2", "text": "<ruby>出身<rt>しゅっしん</rt></ruby>は どこですか。", "viText": "Quê quán của bạn ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/2.2.mp3"},
           {"lesson": 2, "id": "2-3", "text": "<ruby>家族<rt>かぞく</rt></ruby>は <ruby>何人<rt>なんにん</rt></ruby> ですか。", "viText": "Gia đình bạn có mấy người?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/2.3.mp3"},
