@@ -1,5 +1,5 @@
     // =============================================================================
-    // DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver2.2a
+    // DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.00a
     // =============================================================================
        const questions = [
            
@@ -114,7 +114,7 @@
   {"lesson": 10, "id": "10-9", "text": "そこは、どこですか。そこは、<ruby>近<rt>ちか</rt></ruby>くですか。", "viText": "Đó là nơi nào? Có gần không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10-9.mp3"},
   {"lesson": 10, "id": "10-10", "text": "そこに<ruby>有名<rt>ゆうめい</rt></ruby>なものや<ruby>場所<rt>ばしょ</rt></ruby>がありますか。ある➞それは何ですか。", "viText": "Ở đó có món/nơi nổi tiếng không? Nếu có➞Là gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10-10.mp3"}
  // ==================== LESSON 11 ====================
-  {"lesson": 11, "id": "11-1a", "text": "<ruby>家族<rt>かぞく</rt></ruby>は<ruby>何人<rt>なんにん</rt></ruby>いますか。/<ruby>兄弟<rt>きょうだい</rt></ruby>は<ruby>何人<rt>なんにん</rt></ruby>ですか。/<ruby>何人<rt>なんにん</rt></ruby><ruby>兄弟<rt>きょうだい</rt></ruby>ですか。", "viText": "Gia đình bạn có mấy người? / Bạn có mấy anh chị em? / Nhà có mấy anh em?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/11-1a.mp3"},
+{lesson": 11, "id": "11-1a", "text": "<ruby>家族<rt>かぞく</rt></ruby>は<ruby>何人<rt>なんにん</rt></ruby>いますか。/<ruby>兄弟<rt>きょうだい</rt></ruby>は<ruby>何人<rt>なんにん</rt></ruby>ですか。/<ruby>何人<rt>なんにん</rt></ruby><ruby>兄弟<rt>きょうだい</rt></ruby>ですか。", "viText": "Gia đình bạn có mấy người? / Bạn có mấy anh chị em? / Nhà có mấy anh em?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/11-1a.mp3"},
   {"lesson": 11, "id": "11-2a", "text": "だれがいますか。お<ruby>父<rt>とう</rt></ruby>さん/お<ruby>母<rt>かあ</rt></ruby>さん/お<ruby>兄<rt>にい</rt></ruby>さん/お<ruby>姉<rt>ねえ</rt></ruby>さん/<ruby>妹<rt>いもうと</rt></ruby>さん/<ruby>弟<rt>おとうと</rt></ruby>さんは、どんな<ruby>人<rt>ひと</rt></ruby>ですか。", "viText": "Gia đình gồm những ai? Bố / Mẹ / Anh / Chị / Em gái / Em trai của bạn là người thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/11-2a.mp3"},
   {"lesson": 11, "id": "11-3", "text": "ここから<ruby>家<rt>いえ</rt></ruby>まで<ruby>何<rt>なに</rt></ruby>で<ruby>帰<rt>かえ</rt></ruby>りますか。", "viText": "Từ đây về nhà bạn đi bằng gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/11-3.mp3"},
   {"lesson": 11, "id": "11-4a", "text": "<ruby>片道<rt>かたみち</rt></ruby>/<ruby>往復<rt>おうふく</rt></ruby>いくらかかりますか。どのぐらいかかりますか。", "viText": "Đi một chiều / khứ hồi hết bao nhiêu? Mất bao lâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/11-4a.mp3"},
