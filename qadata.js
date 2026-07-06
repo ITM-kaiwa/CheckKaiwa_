@@ -1,5 +1,5 @@
 // =============================================================================
-// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01m
+// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01n
 // =============================================================================
 const questions = [
             
@@ -102,12 +102,12 @@ const questions = [
   {"lesson": 9, "id": "9-8", "text": "<ruby>休<rt>やす</rt></ruby>みの<ruby>日<rt>ひ</rt></ruby>、<ruby>友達<rt>ともだち</rt></ruby>と<ruby>約束<rt>やくそく</rt></ruby>がありますか。", "viText": "Ngày nghỉ bạn có hẹn với bạn bè không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/9.8.mp3"},
   {"lesson": 9, "id": "9-9a", "text": "はい➞だれと<ruby>約束<rt>やくそく</rt></ruby>しましたか/どんな<ruby>約束<rt>やくそく</rt></ruby>ですか。いいえ➞では、<ruby>休<rt>やす</rt></ruby>みの<ruby>日<rt>ひ</rt></ruby>、<ruby>時間<rt>じかん</rt></ruby>がありますか。", "viText": "Có➞Hẹn với ai/làm gì? Không➞Vậy ngày nghỉ bạn có thời gian không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/9.9a.mp3"},
   {"lesson": 9, "id": "9-10", "text": "<ruby>私<rt>わたし</rt></ruby>（<ruby>先生<rt>せんせい</rt></ruby>）の<ruby>日本語<rt>にほんご</rt></ruby>が、わかりますか。", "viText": "Bạn có hiểu tiếng Nhật của tôi (thầy/cô) không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/9.10.mp3"},
- // ==================== LESSON 10 ====================
+ // ==================== LESSON 10 ==================== 音声ファイル名が変則的になっている。
 {"lesson": 10, "id": "10-1a", "text": "<ruby>担任<rt>たんにん</rt></ruby>の<ruby>先生<rt>せんせい</rt></ruby>は / ○○さんの<ruby>家族<rt>かぞく</rt></ruby>は <ruby>今<rt>いま</rt></ruby>どこにいますか。", "viText": "Bạn 〇〇/Thầy Cô 〇〇/Gia đình bạn 〇〇 hiện đang ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.1a.mp3"},
   {"lesson": 10, "id": "10-2", "text": "<ruby>今<rt>いま</rt></ruby>、この<ruby>部屋<rt>へや</rt></ruby>の<ruby>外<rt>そと</rt></ruby> にだれがいますか。", "viText": "Bây giờ trong ngoài phòng có ai không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.2.mp3"},
-  {"lesson": 10, "id": "10-3", "text": "<ruby>今<rt>いま</rt></ruby>、この<ruby>部屋<rt>へや</rt></ruby>の<ruby>外<rt>そと</rt></ruby> にだれがいますか。", "viText": "Bây giờ trong ngoài phòng có ai không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.3.mp3"},
-  {"lesson": 10, "id": "10-4a", "text": "（<ruby>教室<rt>きょうしつ</rt></ruby>で、）○○さんの<ruby>前<rt>まえ</rt></ruby>/<ruby>後<rt>うし</rt></ruby>ろ/<ruby>隣<rt>となり</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>はだれですか。", "viText": "(Trong lớp) Người ngồi trước/sau/bên cạnh bạn 〇〇 là ai?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.4a.mp3"},
-  {"lesson": 10, "id": "10-4b", "text": "どこにホワイトボード/テレビ/ゴミ<ruby>箱<rt>ばこ</rt></ruby>がありますか。", "viText": "Bảng/Tivi/Thùng rác ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.4b.mp3"},
+  // === {"lesson": 10, "id": "10-3 old ", "text": "<ruby>今<rt>いま</rt></ruby>、この<ruby>部屋<rt>へや</rt></ruby>の<ruby>外<rt>そと</rt></ruby> にだれがいますか。", "viText": "Bây giờ trong ngoài phòng có ai không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.3.mp3"},
+  {"lesson": 10, "id": "10-3", "text": "（<ruby>教室<rt>きょうしつ</rt></ruby>で、）○○さんの<ruby>前<rt>まえ</rt></ruby>/<ruby>後<rt>うし</rt></ruby>ろ/<ruby>隣<rt>となり</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>はだれですか。", "viText": "(Trong lớp) Người ngồi trước/sau/bên cạnh bạn 〇〇 là ai?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.3a.mp3"}, //===ファイル名は１０．３
+  {"lesson": 10, "id": "10-4", "text": "どこにホワイトボード/テレビ/ゴミ<ruby>箱<rt>ばこ</rt></ruby>がありますか。", "viText": "Bảng/Tivi/Thùng rác ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.4b.mp3"},
   {"lesson": 10, "id": "10-5a", "text": "〇〇さんの/<ruby>先生<rt>せんせい</rt></ruby>の/ <ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>/<ruby>中<rt>なか</rt></ruby>/<ruby>下<rt>した</rt></ruby>に、<ruby>何<rt>なに</rt></ruby>がありますか。", "viText": "Trên/trong/dưới bàn của bạn 〇〇/của thầy cô có gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.5a.mp3"},
   {"lesson": 10, "id": "10-6", "text": "○○さんの<ruby>出身地<rt>しゅっしんち</rt></ruby>はどこですか。それはどこにありますか。", "viText": "Quê bạn 〇〇 ở đâu? Nó nằm ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.6.mp3"},
   {"lesson": 10, "id": "10-7", "text": "（<ruby>所在地<rt>しょざいち</rt></ruby>）に<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>場所<rt>ばしょ</rt></ruby>がありますか。", "viText": "Ở nơi bạn ở có địa điểm nổi tiếng nào không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.7.mp3"},
