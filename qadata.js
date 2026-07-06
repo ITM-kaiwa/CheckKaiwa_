@@ -1,5 +1,5 @@
     // =============================================================================
-    // DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01k
+    // DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01l
     // =============================================================================
        const questions = [
             
@@ -277,7 +277,7 @@
   {"lesson": 25, "id": "25-8", "text": "60<ruby>歳<rt>さい</rt></ruby>になっても<ruby>働<rt>はたら</rt></ruby>きたい？", "viText": "Sau này 60 tuổi bạn vẫn muốn làm việc chứ?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/25.8.mp3"},
   {"lesson": 25, "id": "25-9", "text": "どうしたら、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>になると<ruby>思<rt>おも</rt></ruby>う？", "viText": "Bạn nghĩ làm sao để giỏi tiếng Nhật?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/25.9.mp3"},
   {"lesson": 25, "id": "25-10", "text": "<ruby>健康<rt>けんこう</rt></ruby>と<ruby>家族<rt>かぞく</rt></ruby>と<ruby>友達<rt>ともだち</rt></ruby>と、<ruby>何<rt>なに</rt></ruby>があったら<ruby>幸<rt>しあわ</rt></ruby>せ／うれしい？どうして？", "viText": "Bạn thấy hạnh phúc nhất khi có được điều gì (sức khỏe,gia đình, bạn bè)? Tại sao?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/25.10.mp3"},
-// ==================== LESSON 26 ====================
+// ==================== LESSON 26 ====================ここから
    {"lesson": 26, "id": "26-1", "text": "<ruby>日本人<rt>にほんじん</rt></ruby>の<ruby>話<rt>はな</rt></ruby>し<ruby>方<rt>かた</rt></ruby>がはやいとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>ったらいいですか。 ※～ていただけませんか と<ruby>言<rt>い</rt></ruby>います", "viText": "Khi cách nói của người Nhật nhanh, thì nên nói như thế nào? ※Nói là \"...te itadakemasen ka\".", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/26.1.mp3"},
   {"lesson": 26, "id": "26-2a", "text": "<ruby>課長<rt>かちょう</rt></ruby>の<ruby>指示<rt>しじ</rt></ruby>が<ruby>半分<rt>はんぶん</rt></ruby>しか／ちょっとしかわからないとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>ったらいいですか。 ※～ていただけませんか／ もう<ruby>一度<rt>いちど</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします と<ruby>言<rt>い</rt></ruby>います", "viText": "Khi chỉ hiểu một nửa/một chút chỉ thị của trưởng phòng, thì nên nói như thế nào? ※Nói là \"...te itadakemasen ka\" hoặc \"Mou ichido onegaishimasu\".", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/26.2a.mp3"},
   {"lesson": 26, "id": "26-2b", "text": "<ruby>課長<rt>かちょう</rt></ruby>の<ruby>指示<rt>しじ</rt></ruby>が<ruby>半分<rt>はんぶん</rt></ruby>しか／ちょっとしかわからないとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>ったらいいですか。 ※～ていただけませんか／ もう<ruby>一度<rt>いちど</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします と<ruby>言<rt>い</rt></ruby>います", "viText": "Khi chỉ hiểu một nửa/một chút chỉ thị của trưởng phòng, thì nên nói như thế nào? ※Nói là \"...te itadakemasen ka\" hoặc \"Mou ichido onegaishimasu\".", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/26.2b.mp3"},
