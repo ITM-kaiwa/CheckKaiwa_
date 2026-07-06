@@ -1,5 +1,5 @@
     // =============================================================================
-    // DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01j
+    // DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01k
     // =============================================================================
        const questions = [
             
@@ -107,7 +107,7 @@
   {"lesson": 10, "id": "10-2", "text": "<ruby>今<rt>いま</rt></ruby>、この<ruby>部屋<rt>へや</rt></ruby>の<ruby>外<rt>そと</rt></ruby> にだれがいますか。", "viText": "Bây giờ trong ngoài phòng có ai không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.2.mp3"},
   {"lesson": 10, "id": "10-3", "text": "<ruby>今<rt>いま</rt></ruby>、この<ruby>部屋<rt>へや</rt></ruby>の<ruby>外<rt>そと</rt></ruby> にだれがいますか。", "viText": "Bây giờ trong ngoài phòng có ai không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.3.mp3"},
   {"lesson": 10, "id": "10-4a", "text": "（<ruby>教室<rt>きょうしつ</rt></ruby>で、）○○さんの<ruby>前<rt>まえ</rt></ruby>/<ruby>後<rt>うし</rt></ruby>ろ/<ruby>隣<rt>となり</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>はだれですか。", "viText": "(Trong lớp) Người ngồi trước/sau/bên cạnh bạn 〇〇 là ai?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.4a.mp3"},
-  {"lesson": 10, "id": "10-4b", "text": "どこにホワイトボード/テレビ/ゴミ<ruby>箱<rt>ばこ</rt></ruby>がありますか。", "viText": "Bảng/Tivi/Thùng rác ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.4a.mp3"},
+  {"lesson": 10, "id": "10-4b", "text": "どこにホワイトボード/テレビ/ゴミ<ruby>箱<rt>ばこ</rt></ruby>がありますか。", "viText": "Bảng/Tivi/Thùng rác ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.4b.mp3"},
   {"lesson": 10, "id": "10-5a", "text": "〇〇さんの/<ruby>先生<rt>せんせい</rt></ruby>の/ <ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>/<ruby>中<rt>なか</rt></ruby>/<ruby>下<rt>した</rt></ruby>に、<ruby>何<rt>なに</rt></ruby>がありますか。", "viText": "Trên/trong/dưới bàn của bạn 〇〇/của thầy cô có gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.5a.mp3"},
   {"lesson": 10, "id": "10-6", "text": "○○さんの<ruby>出身地<rt>しゅっしんち</rt></ruby>はどこですか。それはどこにありますか。", "viText": "Quê bạn 〇〇 ở đâu? Nó nằm ở đâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.6.mp3"},
   {"lesson": 10, "id": "10-7", "text": "（<ruby>所在地<rt>しょざいち</rt></ruby>）に<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>場所<rt>ばしょ</rt></ruby>がありますか。", "viText": "Ở nơi bạn ở có địa điểm nổi tiếng nào không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/10.7.mp3"},
@@ -237,7 +237,7 @@
    {"lesson": 22, "id": "22-1", "text": "どんな<ruby>人<rt>ひと</rt></ruby>が <ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>になりますか。<ruby>勉強<rt>べんきょう</rt></ruby>する<ruby>人<rt>ひと</rt></ruby>ですか。しない<ruby>人<rt>ひと</rt></ruby>ですか。", "viText": "Người như thế nào thì giỏi tiếng Nhật? Người chăm học hay người không chăm học ?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.1.mp3"},
   {"lesson": 22, "id": "22-2", "text": "パーティをします。あなたはいつも<ruby>何<rt>なに</rt></ruby>をする<ruby>人<rt>ひと</rt></ruby>ですか。<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る<ruby>人<rt>ひと</rt></ruby>ですか。<ruby>皿<rt>さら</rt></ruby>を<ruby>洗<rt>あら</rt></ruby>う<ruby>人<rt>ひと</rt></ruby>ですか。", "viText": "Khi tổ chức tiệc, bạn thường là người làm việc gì?Bạn là người nấu ăn hay người rửa bát?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.2.mp3"},
   {"lesson": 22, "id": "22-3", "text": "ここはどんなところですか。<ruby>何<rt>なに</rt></ruby>をするところですか。", "viText": "Đây là nơi như thế nào? Là nơi dùng để làm gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.3.mp3"},
-  {"lesson": 22, "id": "22-4", "text": "<ruby>会社<rt>かいしゃ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>をする<ruby>会社<rt>かいしゃ</rt></ruby>ですか。", "viText": "Công ty của bạn làm về cái gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.4.mp3"},
+  {"lesson": 22, "id": "22-4", "text": "あなたの<ruby>会社<rt>かいしゃ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>をする<ruby>会社<rt>かいしゃ</rt></ruby>ですか。", "viText": "Công ty của bạn làm về cái gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.4.mp3"},
   {"lesson": 22, "id": "22-5", "text": "ロボットを<ruby>貰<rt>もら</rt></ruby>います。どんなロボットがほしいですか。", "viText": "Nếu được tặng robot, bạn muốn robot như thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.5.mp3"},
   {"lesson": 22, "id": "22-6", "text": "～ている <ruby>人<rt>ひと</rt></ruby>はだれですか。", "viText": "Người đang (hành động) là ai vậy?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.6.mp3"},
   {"lesson": 22, "id": "22-7", "text": "<ruby>名前<rt>なまえ</rt></ruby>がわかりません。<ruby>私<rt>わたし</rt></ruby>に<ruby>聞<rt>き</rt></ruby>いてください。", "viText": "Bạn không biết tên. Hãy hỏi tôi đi.", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.7.mp3"},
