@@ -1,7 +1,7 @@
-    // =============================================================================
-    // DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01l
-    // =============================================================================
-       const questions = [
+// =============================================================================
+// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.01m
+// =============================================================================
+const questions = [
             
 // ==================== LESSON 1 ====================
   {"lesson": 1, "id": "1-1a", "text": "おなまえは なんですか。/ なまえを いってください/ おしえてください。", "viText": "Tên bạn là gì? / Hãy nói tên bạn / Hãy cho tôi biết tên bạn.", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/1.1a.mp3"},
@@ -81,7 +81,7 @@
   {"lesson": 7, "id": "7-9", "text": "いつも、ケータイで<ruby>何<rt>なに</rt></ruby>をしますか。", "viText": "Bạn thường làm gì trên điện thoại?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/7.9.mp3"},
   {"lesson": 7, "id": "7-10", "text": "それは、おもしろいですか／どうですか。", "viText": "Nó có thú vị không/như thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/7.10.mp3"},
  // ==================== LESSON 8 ====================
-           {"lesson": 8, "id": "8-1", "text": "〇〇さんの<ruby>出身<rt>しゅっしん</rt></ruby>はどこ／どちらですか。ここから <ruby>近<rt>ちか</rt></ruby>いですか。", "viText": "Quê bạn 〇〇 ở đâu? Có gần đây không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/8.1.mp3"},
+    {"lesson": 8, "id": "8-1", "text": "〇〇さんの<ruby>出身<rt>しゅっしん</rt></ruby>はどこ／どちらですか。ここから <ruby>近<rt>ちか</rt></ruby>いですか。", "viText": "Quê bạn 〇〇 ở đâu? Có gần đây không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/8.1.mp3"},
   {"lesson": 8, "id": "8-2", "text": "そこは <ruby>便利<rt>べんり</rt></ruby>なところですか。", "viText": "(Quê bạn) có phải là nơi tiện lợi không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/8.2.mp3"},
   {"lesson": 8, "id": "8-3", "text": "（<ruby>出身地<rt>しゅっしんち</rt></ruby>）は、どんなところですか。", "viText": "(Quê bạn) là nơi như thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/8.3.mp3"},
   {"lesson": 8, "id": "8-4", "text": "ITMセンターは、<ruby>新<rt>あたら</rt></ruby>しい ですか。", "viText": "Trung tâm ITM có mới không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/8.4.mp3"},
@@ -221,7 +221,6 @@
   {"lesson": 20, "id": "20-8", "text": "<ruby>漢字<rt>かんじ</rt></ruby> <ruby>書<rt>か</rt></ruby>くことができる？ いくつぐらい？", "viText": "Viết được chữ Hán không? Được tầm bao nhiêu chữ?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/20.8.mp3"},
   {"lesson": 20, "id": "20-9", "text": "<ruby>勉強<rt>べんきょう</rt></ruby>で <ruby>何<rt>なに</rt></ruby>がいちばん <ruby>難<rt>むずか</rt></ruby>しい？", "viText": "Trong việc học, phần nào khó nhất?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/20.9.mp3"},
   {"lesson": 20, "id": "20-10", "text": "<ruby>明日<rt>あした</rt></ruby> ひま？", "viText": "Ngày mai rảnh không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/20.10.mp3"},   
-     
    // ==================== LESSON 21 ====================
   {"lesson": 21, "id": "21-1a", "text": "<ruby>今朝<rt>けさ</rt></ruby>／テストの<ruby>前<rt>まえ</rt></ruby>に、<ruby>担任<rt>たんにん</rt></ruby>の<ruby>先生<rt>せんせい</rt></ruby>は <ruby>何<rt>なん</rt></ruby>と <ruby>言<rt>い</rt></ruby>いましたか。", "viText": "Sáng nay / trước khi kiểm tra, thầy/cô chủ nhiệm đã nói gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/21.1a.mp3"},
   {"lesson": 21, "id": "21-2", "text": "<ruby>日本人<rt>にほんじん</rt></ruby>と<ruby>話<rt>はな</rt></ruby>しています。<ruby>日本語<rt>にほんご</rt></ruby>がわかりません。<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いましたか。", "viText": "Bạn đang nói chuyện với người Nhật và không hiểu tiếng Nhật. Bạn nói thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/21.2.mp3"},
@@ -277,7 +276,7 @@
   {"lesson": 25, "id": "25-8", "text": "60<ruby>歳<rt>さい</rt></ruby>になっても<ruby>働<rt>はたら</rt></ruby>きたい？", "viText": "Sau này 60 tuổi bạn vẫn muốn làm việc chứ?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/25.8.mp3"},
   {"lesson": 25, "id": "25-9", "text": "どうしたら、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>になると<ruby>思<rt>おも</rt></ruby>う？", "viText": "Bạn nghĩ làm sao để giỏi tiếng Nhật?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/25.9.mp3"},
   {"lesson": 25, "id": "25-10", "text": "<ruby>健康<rt>けんこう</rt></ruby>と<ruby>家族<rt>かぞく</rt></ruby>と<ruby>友達<rt>ともだち</rt></ruby>と、<ruby>何<rt>なに</rt></ruby>があったら<ruby>幸<rt>しあわ</rt></ruby>せ／うれしい？どうして？", "viText": "Bạn thấy hạnh phúc nhất khi có được điều gì (sức khỏe,gia đình, bạn bè)? Tại sao?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/25.10.mp3"},
-// ==================== LESSON 26 ====================ここから
+// ==================== LESSON 26 ====================ここから作業継続
    {"lesson": 26, "id": "26-1", "text": "<ruby>日本人<rt>にほんじん</rt></ruby>の<ruby>話<rt>はな</rt></ruby>し<ruby>方<rt>かた</rt></ruby>がはやいとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>ったらいいですか。 ※～ていただけませんか と<ruby>言<rt>い</rt></ruby>います", "viText": "Khi cách nói của người Nhật nhanh, thì nên nói như thế nào? ※Nói là \"...te itadakemasen ka\".", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/26.1.mp3"},
   {"lesson": 26, "id": "26-2a", "text": "<ruby>課長<rt>かちょう</rt></ruby>の<ruby>指示<rt>しじ</rt></ruby>が<ruby>半分<rt>はんぶん</rt></ruby>しか／ちょっとしかわからないとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>ったらいいですか。 ※～ていただけませんか／ もう<ruby>一度<rt>いちど</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします と<ruby>言<rt>い</rt></ruby>います", "viText": "Khi chỉ hiểu một nửa/một chút chỉ thị của trưởng phòng, thì nên nói như thế nào? ※Nói là \"...te itadakemasen ka\" hoặc \"Mou ichido onegaishimasu\".", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/26.2a.mp3"},
   {"lesson": 26, "id": "26-2b", "text": "<ruby>課長<rt>かちょう</rt></ruby>の<ruby>指示<rt>しじ</rt></ruby>が<ruby>半分<rt>はんぶん</rt></ruby>しか／ちょっとしかわからないとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>ったらいいですか。 ※～ていただけませんか／ もう<ruby>一度<rt>いちど</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします と<ruby>言<rt>い</rt></ruby>います", "viText": "Khi chỉ hiểu một nửa/một chút chỉ thị của trưởng phòng, thì nên nói như thế nào? ※Nói là \"...te itadakemasen ka\" hoặc \"Mou ichido onegaishimasu\".", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/26.2b.mp3"},
