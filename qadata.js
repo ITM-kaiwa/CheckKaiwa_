@@ -1,5 +1,5 @@
 // =============================================================================
-// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.02g
+// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.02h
 // =============================================================================
 const questions = [
             
@@ -136,8 +136,8 @@ const questions = [
 // ==================== LESSON 13 ====================
   {"lesson": 13, "id": "13-1", "text": "お<ruby>金<rt>かね</rt></ruby>と<ruby>時間<rt>じかん</rt></ruby>と どちらが <ruby>欲<rt>ほ</rt></ruby>しいですか。", "viText": "Bạn muốn tiền hay thời gian hơn?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.1.mp3"},
   {"lesson": 13, "id": "13-2a", "text": "<ruby>今<rt>いま</rt></ruby>、お<ruby>金<rt>かね</rt></ruby>が たくさん あります。<ruby>何<rt>なに</rt></ruby>をしますか。", "viText": "Nếu bây giờ có thật nhiều tiền, bạn sẽ làm gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.2a.mp3"},
-  {"lesson": 13, "id": "13-3", "text": "いま、<ruby>何<rt>なに</rt></ruby>が いちばん ほしいですか。（お<ruby>金<rt>かね</rt></ruby>はダメです。）", "viText": "Bây giờ bạn muốn cái gì nhất? (Không phải tiền)", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.3.mp3"},
-  {"lesson": 13, "id": "13-4", "text": "どんなの がほしいですか。", "viText": "Tiếp tục trả lời câu 3. Bạn muốn cái đó (thứ bạn muốn) như thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.4.mp3"},
+  {"lesson": 13, "id": "13-3", "text": "いま、<ruby>何<rt>なに</rt></ruby>が いちばん <ruby>欲<rt>ほ</rt></ruby>しいですか。（お<ruby>金<rt>かね</rt></ruby>はダメです。）", "viText": "Bây giờ bạn muốn cái gì nhất? (Không phải tiền)", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.3.mp3"},
+  {"lesson": 13, "id": "13-4", "text": "どんなの が<ruby>欲<rt>ほ</rt></ruby>しいですか。", "viText": "Tiếp tục trả lời câu 3. Bạn muốn cái đó (thứ bạn muốn) như thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.4.mp3"},
   {"lesson": 13, "id": "13-5a", "text": "のどが <ruby>渇<rt>かわ</rt></ruby>きましたか。/ お<ruby>腹<rt>なか</rt></ruby>が<ruby>空<rt>す</rt></ruby>きましたか。", "viText": "Bạn có khát nước không? / Bạn có đói bụng không?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.5a.mp3"},
   {"lesson": 13, "id": "13-6", "text": "いつ<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きますか。<ruby>何<rt>なに</rt></ruby>をしに<ruby>行<rt>い</rt></ruby>きますか。", "viText": "Khi nào bạn đi Nhật? Bạn đi để làm gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.6.mp3"},
   {"lesson": 13, "id": "13-7a", "text": "<ruby>日本<rt>にほん</rt></ruby>でどれくらい<ruby>働<rt>はたら</rt></ruby>きたいですか。", "viText": "Bạn muốn làm việc ở Nhật bao lâu?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/13.7a.mp3"},
