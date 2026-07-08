@@ -1,5 +1,5 @@
 // =============================================================================
-// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.02h
+// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.02j
 // =============================================================================
 const questions = [
             
@@ -239,8 +239,8 @@ const questions = [
   {"lesson": 22, "id": "22-5", "text": "ロボットを<ruby>貰<rt>もら</rt></ruby>います。どんなロボットがほしいですか。", "viText": "Nếu được tặng robot, bạn muốn robot như thế nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.5.mp3"},
   {"lesson": 22, "id": "22-6", "text": "<ruby>帽子<rt>ぼうし</rt></ruby>をかぶっている <ruby>人<rt>ひと</rt></ruby>／スーツを<ruby>着<rt>き</rt></ruby>ている<ruby>人<rt>ひと</rt></ruby>はだれですか。", "viText": "Người đang đội mũ / đang mặc bộ đồ đó là ai vậy?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.6.mp3"},
   {"lesson": 22, "id": "22-7", "text": "<ruby>名前<rt>なまえ</rt></ruby>がわかりません。<ruby>私<rt>わたし</rt></ruby>に<ruby>聞<rt>き</rt></ruby>いてください。", "viText": "Bạn không biết tên. Hãy hỏi tôi đi.", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.7.mp3"},
-  {"lesson": 22, "id": "22-8", "text": "<ruby>佐藤<rt>さとう</rt></ruby>さんはどの<ruby>人<rt>ひと</rt></ruby>ですか。", "viText": "Anh/Chị Sato là người nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.8.mp3"},
-  {"lesson": 22, "id": "22-9", "text": "どの<ruby>人<rt>ひと</rt></ruby>が<ruby>好<rt>す</rt></ruby>きですか。", "viText": "Trong số những người này, bạn thích người nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.9.mp3"},
+  {"lesson": 22, "id": "22-8", "text": "<ruby>佐藤<rt>さとう</rt></ruby>さんはどの<ruby>人<rt>ひと</rt></ruby>ですか。", "viText": "Anh/Chị Sato là người nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.8.mp3", "imageUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.8.jpg"},
+  {"lesson": 22, "id": "22-9", "text": "どの<ruby>人<rt>ひと</rt></ruby>が<ruby>好<rt>す</rt></ruby>きですか。", "viText": "Trong số những người này, bạn thích người nào?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.9.mp3", "imageUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.8.jpg"},
   {"lesson": 22, "id": "22-10", "text": "この<ruby>人<rt>ひと</rt></ruby>は<ruby>何<rt>なに</rt></ruby>をした<ruby>人<rt>ひと</rt></ruby>ですか。", "viText": "Người này là người đã làm những gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.10.mp3", "imageUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/22.10.jpg"},
    // ==================== LESSON 23 ====================
    {"lesson": 23, "id": "23-1", "text": "<ruby>時間<rt>じかん</rt></ruby>に<ruby>遅<rt>おく</rt></ruby>れたとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。", "viText": "Khi đến muộn, bạn nói gì?", "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/23.1.mp3"},
