@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -48,11 +49,11 @@
                     指定課別一括連続再生<br>
                     <span class="text-xs font-normal opacity-90">Phát liên tục theo bài chỉ định</span>
                 </button>
-                <button id="individualPlayBtn" class="bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-emerald-600 transition shadow-sm active:scale-95 text-center leading-tight">
+                <button id="individualPlayBtn" class="bg-sky-500 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-sky-600 transition shadow-sm active:scale-95 text-center leading-tight">
                     個別指定音声再生<br>
-                    <span class="text-xs font-normal normal opacity-90">Chế độ hiển thị thẻ cá nhân</span>
+                    <span class="text-xs font-normal opacity-90">Chế độ hiển thị thẻ cá nhân</span>
                 </button>
-                <button id="randomPracticeBtn" class="bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-emerald-600 transition shadow-sm active:scale-95 text-center leading-tight">
+                <button id="randomPracticeBtn" class="bg-sky-500 text-white px-4 py-2.5 rounded-xl font-medium hover:bg-sky-600 transition shadow-sm active:scale-95 text-center leading-tight">
                     ランダム抽出練習<br>
                     <span class="text-xs font-normal opacity-90">Luyện tập ngẫu nhiên</span>
                 </button>
@@ -77,7 +78,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row gap-3 w-full md:w-auto">
-                    <button id="reshuffleBtn" class="hidden w-full md:w-auto md:min-w-[150px] bg-indigo-400 text-white py-3 rounded-xl font-bold hover:bg-indigo-500 transition shadow-sm active:scale-95 flex flex-col items-center justify-center leading-tight px-4 text-sm">
+                    <button id="reshuffleBtn" class="hidden w-full md:w-auto md:min-w-[150px] bg-emerald-400 text-white py-3 rounded-xl font-bold hover:bg-emerald-500 transition shadow-sm active:scale-95 flex flex-col items-center justify-center leading-tight px-4 text-sm">
                         <span>再シャッフル</span>
                         <span class="text-xs font-normal opacity-90 mt-0.5">Xáo trộn lại</span>
                     </button>
@@ -86,7 +87,7 @@
                         <span class="text-xs font-normal opacity-90 mt-0.5">Dừng</span>
                     </button>
                 </div>
-            </div>
+            </div>            
             
             <div id="lessonSelectContainer" class="hidden p-4 bg-indigo-50/50 rounded-xl border border-indigo-100 space-y-3">
                 <label for="lessonSelect" class="block text-sm font-semibold text-indigo-900">対象の課を選択してください（複数選択可）:</label>
@@ -124,15 +125,20 @@
         
         <div id="questionsContainer" class="space-y-4"></div>
         
-        <div id="backToTopContainer" class="hidden mt-8 flex justify-center pb-4">
+       <div id="backToTopContainer" class="hidden mt-8 flex flex-col items-center gap-4 pb-4">
             <button id="backToTopBtn" class="bg-slate-700 text-white px-8 py-3 rounded-xl font-medium hover:bg-slate-800 transition shadow-sm active:scale-95 flex flex-col items-center leading-tight">
                 <span>⬆️ カードの先頭に戻る</span>
                 <span class="text-xs font-normal opacity-80 mt-1">Trở lên đầu trang</span>
             </button>
+            
+            <button id="reFetchRandomBtn" class="hidden bg-sky-500 text-white px-8 py-3 rounded-xl font-medium hover:bg-sky-600 transition shadow-sm active:scale-95 flex flex-col items-center justify-center leading-tight border border-sky-600">
+                <span>🔄 別の問題で練習する</span>
+                <span class="text-xs font-normal opacity-90 mt-1">Luyện tập với các câu hỏi khác</span>
+            </button>
         </div>
     </div>
 
-   <div id="recordModal" class="modal-overlay">
+  <div id="recordModal" class="modal-overlay">
         <div class="bg-white w-full max-w-lg m-4 p-4 rounded-2xl shadow-xl border border-slate-200 flex flex-col max-h-[95vh]">
             <div class="flex justify-between items-center border-b border-slate-100 pb-2 mb-2 shrink-0">
                 <h3 class="text-md font-bold text-slate-800">🎙️ 録音 / Ghi âm</h3>
@@ -173,7 +179,6 @@
             </div>
         </div>
     </div>
-
     <div id="manualContainer" class="modal-overlay">
         <div class="bg-white w-full max-w-lg m-4 p-6 rounded-2xl shadow-xl border border-slate-200 flex flex-col max-h-[85vh]">
             <div class="flex justify-between items-center border-b border-slate-100 pb-3 mb-4">
@@ -212,7 +217,7 @@
 
     <div class="w-full text-center py-2 mt-4 border-t border-slate-200/60 text-slate-500">
         <p class="text-xs">&copy; 2026 ITM Group, All rights reserved.</p>
-        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver3.92d</span>
+        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver3.94b</span>
     </div>
 
 <script>
@@ -272,6 +277,7 @@
     const reshuffleBtn = document.getElementById('reshuffleBtn');
     const backToTopContainer = document.getElementById('backToTopContainer');
     const backToTopBtn = document.getElementById('backToTopBtn');
+    const reFetchRandomBtn = document.getElementById('reFetchRandomBtn'); //---ランダム抽出機能の再出題
 
     // 録音モーダル内コンポーネント
     const recordModal = document.getElementById('recordModal');
@@ -388,13 +394,18 @@
             executeNextQueueItem();
         };
 
-        currentAudio.play().catch(err => {
-            console.error('Playback failed:', err);
-            queueIndex++;
-            executeNextQueueItem();
-        });
+        const playPromise = currentAudio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // 再生が正常に開始された
+            }).catch(error => {
+                console.warn('Playback interrupted or failed:', error);
+                queueIndex++;
+                executeNextQueueItem();
+            });
+        }
     }
-
+    
     // -------------------------------------------------------------------------
     // 4. UI・カードレンダリング処理 (UI & Card Rendering)
     // -------------------------------------------------------------------------
@@ -565,6 +576,11 @@
 
     // ドロップダウンで指定された課の表示を判定・確定する共通ロジック
     function executeDisplay(isShuffle) {
+        if (typeof questions === 'undefined') {
+            showError('データが読み込まれていません。');
+            return;
+        }
+
         const selectedLessons = Array.from(lessonSelect.selectedOptions).map(o => parseInt(o.value));
         if (selectedLessons.length === 0) {
             showError('少なくとも1つの課を選択してください。');
@@ -585,7 +601,8 @@
         
         // ランダムモードの場合は指定した数だけ切り出す
         if (mode === 'random') {
-            let count = parseInt(randomCountInput.value) || 10;
+            let count = parseInt(randomCountInput.value);
+            if (isNaN(count) || count < 1) count = 10; // 空欄や0以下の場合はデフォルトの10にする
             if (count > filtered.length) count = filtered.length;
             filtered = filtered.slice(0, count);
         }
@@ -598,6 +615,13 @@
             renderCards(currentFilteredQuestions);
             startQueuePlayback(currentFilteredQuestions);
         }
+        // ランダムモードの時だけ「別の問題で練習する」ボタンを表示する
+        if (mode === 'random') {
+            reFetchRandomBtn.classList.remove('hidden');
+        } else {
+            reFetchRandomBtn.classList.add('hidden');
+        }
+        
         lessonSelectContainer.classList.add('hidden');
     }
 
@@ -608,7 +632,6 @@
         if (state === 'idle') {
             startRecordBtn.disabled = false;
             startRecordBtn.className = 'bg-red-50 text-red-600 border border-red-200 py-2 rounded-xl text-sm font-bold hover:bg-red-100 transition flex items-center justify-center gap-2';
-            // ベトナム語を追記
             startRecordBtn.innerHTML = '🔴 録音開始 (Ghi âm)';
             
             stopRecordBtn.disabled = true;
@@ -621,7 +644,6 @@
         } else if (state === 'recording') {
             startRecordBtn.disabled = true;
             startRecordBtn.className = 'bg-red-600 text-white border border-red-700 py-2 rounded-xl text-sm font-bold transition flex items-center justify-center gap-2 animate-pulse';
-            // ベトナム語を追記
             startRecordBtn.innerHTML = '🔴 録音中... (Đang ghi)';
             
             stopRecordBtn.disabled = false;
@@ -634,7 +656,6 @@
         } else if (state === 'recorded') {
             startRecordBtn.disabled = false;
             startRecordBtn.className = 'bg-red-50 text-red-600 border border-red-200 py-2 rounded-xl text-sm font-bold hover:bg-red-100 transition flex items-center justify-center gap-2';
-            // ベトナム語を追記
             startRecordBtn.innerHTML = '🔄 やり直す (Ghi lại)';
             
             stopRecordBtn.disabled = true;
@@ -642,7 +663,6 @@
             
             playRecordBtn.classList.remove('opacity-50', 'pointer-events-none');
             saveRecordBtn.classList.remove('opacity-50', 'pointer-events-none');
-            // ベトナム語を追記
             saveRecordBtn.innerHTML = isFfmpegLoaded ? '💾 保存 (Lưu MP3)' : '💾 保存 (Lưu Webm)';
             recordStatus.textContent = '保存完了--再生または保存できます (Hoàn thành)';
         }
@@ -680,7 +700,6 @@
 
     // FFmpeg エンジンのロードランタイム初期化
     saveRecordBtn.classList.add('opacity-50', 'pointer-events-none');
-    // ベトナム語を追記
     saveRecordBtn.innerHTML = '⏳ エンジン準備中... (Đang chuẩn bị...)';
 
     try {
@@ -696,25 +715,21 @@
                     await ffmpeg.load();
                     isFfmpegLoaded = true;
                     console.log("MP3変換エンジンの準備が完了しました");
-                    // ベトナム語を追記
                     saveRecordBtn.innerHTML = '💾 保存 (Lưu)';
                 } catch (e) {
                     console.error("GitHub Pages等の環境制約(SharedArrayBuffer)によりFFmpegロードをスキップしました。Webmフォールバックで動作します。");
                     isFfmpegLoaded = false;
-                    // ベトナム語を追記
                     saveRecordBtn.innerHTML = '💾 保存 (Lưu)';
                 }
             })();
         } else {
             console.warn("FFmpegライブラリが検出されません。Webmフォールバックモードで動作します。");
             isFfmpegLoaded = false;
-            // ベトナム語を追記
             saveRecordBtn.innerHTML = '💾 保存 (Lưu)';
         }
     } catch (err) {
         console.error("FFmpeg初期化エラーによりスキップ:", err);
         isFfmpegLoaded = false;
-        // ベトナム語を追記
         saveRecordBtn.innerHTML = '💾 保存 (Lưu)';
     }
 
@@ -754,7 +769,7 @@
     playLessonBtn.addEventListener('click', () => {
         terminatePlayback();
         lessonSelectContainer.classList.remove('hidden');
-        randomCountContainer.classList.add('hidden'); // ランダム用入力を非表示
+        randomCountContainer.classList.add('hidden');
         randomCountContainer.classList.remove('flex');
         confirmBtn.setAttribute('data-mode', 'normal');
         lessonSelect.focus();
@@ -764,7 +779,7 @@
     individualPlayBtn.addEventListener('click', () => {
         terminatePlayback();
         lessonSelectContainer.classList.remove('hidden');
-        randomCountContainer.classList.add('hidden'); // ランダム用入力を非表示
+        randomCountContainer.classList.add('hidden');
         randomCountContainer.classList.remove('flex');
         confirmBtn.setAttribute('data-mode', 'individual');
         lessonSelect.focus();
@@ -774,7 +789,7 @@
     randomPracticeBtn.addEventListener('click', () => {
         terminatePlayback();
         lessonSelectContainer.classList.remove('hidden');
-        randomCountContainer.classList.remove('hidden'); // ランダム用入力を表示
+        randomCountContainer.classList.remove('hidden');
         randomCountContainer.classList.add('flex');
         confirmBtn.setAttribute('data-mode', 'random');
         lessonSelect.focus();
@@ -810,6 +825,15 @@
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // 「別の問題で練習する」ボタンの処理
+    if (reFetchRandomBtn) {
+        reFetchRandomBtn.addEventListener('click', () => {
+            terminatePlayback(); // 現在の音声を停止
+            executeDisplay(false); // 選択されている課から再度ランダム抽出し直して画面更新
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // 画面の一番上へスクロール
         });
     }
         
@@ -970,7 +994,7 @@
     saveRecordBtn.addEventListener('click', async () => {
         if (!recordedAudioUrl) return;                
         const originalText = saveRecordBtn.innerHTML;
-        // ベトナム語を追記
+        
         saveRecordBtn.innerHTML = '⏳ 処理中... (Đang xử lý)';
         saveRecordBtn.classList.add('opacity-50', 'pointer-events-none');
 
@@ -982,7 +1006,7 @@
                 
                 ffmpeg.FS('writeFile', 'input.webm', await fetchFile(webmBlob));
                 await ffmpeg.run('-i', 'input.webm', '-c:a', 'libmp3lame', '-q:a', '2', 'output.mp3');
-                                                
+                                                                
                 const mp3Data = ffmpeg.FS('readFile', 'output.mp3');
                 const mp3Blob = new Blob([mp3Data.buffer], { type: 'audio/mp3' });                                
                 
@@ -1026,5 +1050,3 @@
 </script>
 </body>
 </html>
-            
-            
