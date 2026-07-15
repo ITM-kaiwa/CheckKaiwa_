@@ -235,7 +235,7 @@
         </div>
     </div>
 
-    <!-- ⏱️ ★新規追加：ドラッグ可能な3秒タイマーオブジェクト -->
+    <!-- ⏱️ ★変更：ドラッグ可能なタイマーオブジェクト -->
     <div id="floatingTimer" class="hidden fixed z-[9000] bg-white/95 backdrop-blur-sm border-2 border-orange-400 rounded-2xl shadow-2xl flex flex-col items-center justify-between overflow-hidden transition-opacity" style="width: 140px; height: 150px; bottom: 30px; right: 30px; touch-action: none;">
         <!-- ドラッグ用ハンドル部分 -->
         <div id="timerDragHandle" class="bg-orange-500 text-white text-[11px] w-full text-center py-2 font-bold cursor-move flex items-center justify-center gap-1 active:bg-orange-600 transition-colors">
@@ -243,8 +243,8 @@
         </div>
         <!-- カウントダウン表示部分 -->
         <div class="flex-1 flex flex-col items-center justify-center w-full pointer-events-none">
-            <span class="text-xs text-slate-500 font-bold mb-1">次の音声まで</span>
-            <span id="timerText" class="text-6xl font-black text-orange-500 tabular-nums tracking-tighter drop-shadow-sm">3</span>
+            <span class="text-xs text-slate-500 font-bold mb-1">Thời gian trả lời</span>
+            <span id="timerText" class="text-6xl font-black text-orange-500 tabular-nums tracking-tighter drop-shadow-sm transition-colors duration-300">3</span>
         </div>
         <!-- プログレスバー -->
         <div class="w-full h-1.5 bg-slate-100 pointer-events-none">
@@ -254,7 +254,7 @@
 
     <div class="w-full text-center py-2 mt-4 border-t border-slate-200/60 text-slate-500">
         <p class="text-xs">&copy; 2026 ITM Group, All rights reserved.</p>
-        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.200a</span>
+        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.120a</span>
     </div>
 
 <script>
@@ -269,8 +269,8 @@
     let audioQueue = [];
     let isPlayingQueue = false;
     let queueIndex = 0;
-    let playbackTimeout = null;          // 連巡再生時の二重再生防止用タイマー保持
-    let currentFilteredQuestions = [];   // 現在の選択条件に合致した表示中データリスト
+    let playbackTimeout = null;          
+    let currentFilteredQuestions = [];   
 
     // 録音・模範音声・変換エンジン周りの状態管理
     let mediaRecorder = null;
@@ -288,7 +288,7 @@
     let fetchFile = null;
     let isFfmpegLoaded = false;
 
-    // ★追加：フローティングタイマー管理変数
+    // フローティングタイマー管理変数
     let countdownInterval = null;
     
     // -------------------------------------------------------------------------
@@ -338,7 +338,7 @@
     const recordStatus = document.getElementById('recordStatus');
     const modalRecordCloseOkBtn = document.getElementById('modalRecordCloseOkBtn');
 
-    // ★追加：フローティングタイマー要素
+    // フローティングタイマー要素
     const floatingTimer = document.getElementById('floatingTimer');
     const timerDragHandle = document.getElementById('timerDragHandle');
     const timerText = document.getElementById('timerText');
@@ -348,7 +348,7 @@
     // 3. 音声・再生制御ヘルパー関数 (Audio & Playback Helpers)
     // -------------------------------------------------------------------------
     
-    // 【新規追加】フローティングタイマーを非表示・リセットする関数
+    // フローティングタイマーを非表示・リセットする関数
     function hideFloatingTimer() {
         if (countdownInterval) {
             clearInterval(countdownInterval);
@@ -359,34 +359,44 @@
         }
     }
 
-    // 【新規追加】フローティングタイマーを起動する関数（3秒固定）
+    // ★変更：フローティングタイマーを起動する関数
     function startFloatingTimer() {
+        // 現在のモードが「個別指定（individual）」または「ランダム（random）」でなければ終了
+        const currentMode = confirmBtn.getAttribute('data-mode');
+        if (currentMode !== 'individual' && currentMode !== 'random') {
+            return;
+        }
+
         if (!floatingTimer || !timerText || !timerBar) return;
         
-        hideFloatingTimer(); // 前のタイマーが動いていればクリア
+        hideFloatingTimer(); 
         
         floatingTimer.classList.remove('hidden');
         let timeLeft = 3;
-        timerText.textContent = timeLeft;
         
-        // CSSアニメーションのリセット
+        // テキストと色のリセット
+        timerText.textContent = timeLeft;
+        timerText.classList.remove('text-red-500'); 
+        timerText.classList.add('text-orange-500');
+        
         timerBar.style.transition = 'none';
         timerBar.style.width = '100%';
 
-        // 少しだけ遅延させてからCSSアニメーションとカウントダウンを開始
         setTimeout(() => {
             timerBar.style.transition = 'width 1s linear';
             countdownInterval = setInterval(() => {
                 timeLeft--;
-                timerText.textContent = timeLeft > 0 ? timeLeft : 0;
-                timerBar.style.width = `${(timeLeft / 3) * 100}%`;
+                timerText.textContent = timeLeft;
 
-                if (timeLeft <= 0) {
-                    clearInterval(countdownInterval);
-                    countdownInterval = null;
-                    // 0になったら少し待ってから非表示にする
-                    setTimeout(hideFloatingTimer, 500); 
+                if (timeLeft > 0) {
+                    timerBar.style.width = `${(timeLeft / 3) * 100}%`;
+                } else {
+                    timerBar.style.width = '0%';
+                    // 0以下になったらマイナスアピールとして赤字に変更
+                    timerText.classList.remove('text-orange-500');
+                    timerText.classList.add('text-red-500'); 
                 }
+                // ★0以下になっても clearInterval はせず、そのままマイナスでカウントし続ける
             }, 1000);
         }, 50);
     }
@@ -439,8 +449,7 @@
         audioQueue = [];
         queueIndex = 0;
 
-        // ★追加：停止時にタイマーも消去
-        hideFloatingTimer();
+        hideFloatingTimer(); // 停止時にタイマーも消去
 
         if (playbackTimeout) {
             clearTimeout(playbackTimeout);
@@ -485,7 +494,7 @@
     }
 
     function executeNextQueueItem() {
-        // ★追加：新しい音声が始まる時に、前のタイマーが残っていれば消す
+        // 次の音声が始まる時に、前のタイマーが残っていれば消す
         hideFloatingTimer();
 
         if (!isPlayingQueue || queueIndex >= audioQueue.length) {
@@ -500,7 +509,7 @@
         currentAudio.onended = () => {
             if (!isPlayingQueue) return;
             
-            // ★追加：キュー連続再生中、一つの音声が終わった瞬間に3秒タイマー起動
+            // キュー連続再生中、一つの音声が終わった瞬間に3秒タイマー起動
             startFloatingTimer();
             
             queueIndex++;
@@ -625,7 +634,7 @@
             recordBtn.className = 'bg-emerald-50 text-emerald-600 p-2 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none active:scale-95';
             recordBtn.innerHTML = '🎤';
             recordBtn.onclick = () => {
-                terminatePlayback();
+                terminatePlayback(); // タイマーも非表示になります
                 openRecordModal(q.id, q.text, q.lesson, q.audioUrl);
             };
             
@@ -633,11 +642,11 @@
             playBtn.className = 'bg-indigo-50 text-indigo-600 p-2 rounded-lg border border-indigo-200 hover:bg-indigo-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none active:scale-95';
             playBtn.innerHTML = '▶';
             playBtn.onclick = () => {
-                terminatePlayback();
+                terminatePlayback(); // ★ここで前のタイマーや音声がリセット・非表示される
                 highlightCard(q.id);
                 currentAudio = new Audio(q.audioUrl);
                 
-                // ★追加：個別再生ボタンでも、再生が終わったらタイマー表示
+                // 個別再生ボタンでも、再生が終わったらタイマー表示
                 currentAudio.onended = () => {
                     startFloatingTimer();
                 };
@@ -739,7 +748,7 @@
     }
 
     // -------------------------------------------------------------------------
-    // ★新規追加：ドラッグ移動のロジック (Drag Logic)
+    // ドラッグ移動のロジック (Drag Logic)
     // -------------------------------------------------------------------------
     let isDragging = false;
     let initialX, initialY;
@@ -747,7 +756,6 @@
     let currentTranslateY = 0;
 
     function dragStart(e) {
-        // ハンドル部分がクリック/タッチされた時だけドラッグ開始とする
         if (e.target === timerDragHandle || timerDragHandle.contains(e.target)) {
             isDragging = true;
             if (e.type === "touchstart") {
@@ -762,7 +770,7 @@
 
     function dragMove(e) {
         if (isDragging) {
-            e.preventDefault(); // スクロール防止
+            e.preventDefault(); 
             if (e.type === "touchmove") {
                 currentTranslateX = e.touches[0].clientX - initialX;
                 currentTranslateY = e.touches[0].clientY - initialY;
@@ -778,7 +786,6 @@
         isDragging = false;
     }
 
-    // ドラッグイベントの登録 (マウス ＆ タッチ対応)
     document.addEventListener("mousedown", dragStart, false);
     document.addEventListener("mousemove", dragMove, false);
     document.addEventListener("mouseup", dragEnd, false);
