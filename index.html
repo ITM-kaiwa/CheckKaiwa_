@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./favicon.png">
-    <title>IQ 会話反応チェック（一般学生・実習生/育成就労生向け）</title>
+    <title>IQ 会話反応チェック（一般学生向け）</title>
     
     <script src="qadata.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -178,11 +178,11 @@
                     <button id="startRecordBtn" class="bg-red-50 text-red-600 border border-red-200 py-2 rounded-xl text-sm font-bold hover:bg-red-100 transition flex items-center justify-center gap-2">🔴 録音開始 (Ghi âm)</button>
                     <button id="stopRecordBtn" class="bg-slate-100 text-slate-400 border border-slate-200 py-2 rounded-xl text-sm font-bold transition flex items-center justify-center gap-2 cursor-not-allowed" disabled>■ 停止 (Dừng)</button>
                     
-                    <button id="playRecordBtn" class="bg-indigo-50 text-indigo-600 border border-indigo-200 py-2 rounded-lg text-sm font-bold opacity-50 pointer-events-none transition focus-visible:ring-2 focus-visible:ring-indigo-400 active:bg-indigo-100">▶️ 再生 (Phát lại)</button>
-                    <button id="saveRecordBtn" class="bg-emerald-50 text-emerald-600 border border-emerald-200 py-2 rounded-lg text-sm font-bold opacity-50 pointer-events-none transition focus-visible:ring-2 focus-visible:ring-emerald-400 active:bg-indigo-100">💾 保存 (Lưu)</button>
+                    <button id="playRecordBtn" class="bg-indigo-50 text-indigo-600 border border-indigo-200 py-2 rounded-lg text-sm font-bold opacity-50 pointer-events-none transition focus-visible:ring-2 focus-visible:ring-orange-400 active:bg-orange-100">▶️ 再生 (Phát lại)</button>
+                    <button id="saveRecordBtn" class="bg-emerald-50 text-emerald-600 border border-emerald-200 py-2 rounded-lg text-sm font-bold opacity-50 pointer-events-none transition focus-visible:ring-2 focus-visible:ring-emerald-400 active:bg-orange-100">💾 保存 (Lưu)</button>
                 </div>
                 
-                <button id="aiAdviceBtn" onclick="window.open('https://itm-kaiwa.github.io/Pronunciation_Analysis/index.html', '_blank')" class="w-full bg-emerald-300 text-white py-1.5 rounded-xl text-xs font-medium hover:bg-emerald-400 transition shadow-sm active:scale-95">
+                <button id="aiAdviceBtn" class="w-full bg-emerald-300 text-white py-1.5 rounded-xl text-xs font-medium hover:bg-emerald-400 transition shadow-sm active:scale-95">
                     AIに発音アドバイスを受ける / Nhận tư vấn từ AI
                 </button>
                 
@@ -234,7 +234,7 @@
 
     <div class="w-full text-center py-2 mt-4 border-t border-slate-200/60 text-slate-500">
         <p class="text-xs">&copy; 2026 ITM Group, All rights reserved.</p>
-        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.000b</span>
+        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.111a</span>
     </div>
 
 <script>
@@ -262,6 +262,7 @@
     let currentRecordLesson = "";
     let currentModelAudioUrl = null;     // モーダル内の模範音声URLの一時保持
     let modelAudioPlayback = null;       // モーダル内の模範音声再生インスタンス
+    let recordedBase64Data = null; // ★これを追加（Base64変換済みデータを保持）Ver4.11
     let ffmpeg = null;
     let fetchFile = null;
     let isFfmpegLoaded = false;
@@ -308,6 +309,7 @@
     const stopRecordBtn = document.getElementById('stopRecordBtn');
     const playRecordBtn = document.getElementById('playRecordBtn');
     const saveRecordBtn = document.getElementById('saveRecordBtn');
+    const aiAdviceBtn = document.getElementById('aiAdviceBtn'); // ← ★Ver4.1で追加
     const recordStatus = document.getElementById('recordStatus');
     const modalRecordCloseOkBtn = document.getElementById('modalRecordCloseOkBtn');
 
@@ -504,19 +506,20 @@
 
             // 各自表示制御ボタン
             const jpBtn = document.createElement('button');
-            jpBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none';
+            jpBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none active:scale-95';
             jpBtn.textContent = 'JP Xem';
             jpBtn.onclick = () => {
                 const p = textSection.querySelector('p:nth-of-type(1)');
                 p.classList.toggle('hidden');
                 if (p.classList.contains('hidden')) {
                     jpBtn.textContent = 'JP Xem';
-                    jpBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none';
+                    jpBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none active:scale-95';
                 } else {
                     jpBtn.textContent = 'JP Ẩn';
-                    jpBtn.className = 'bg-slate-500 text-white font-semibold px-3 py-2 rounded-lg text-xs transition cursor-pointer select-none';
-                }
-            };
+                    jpBtn.className = 'bg-slate-500 text-white font-semibold px-3 py-2 rounded-lg text-xs transition cursor-pointer select-none active:scale-95';
+                } 
+            }
+            
 
             const viBtn = document.createElement('button');
             viBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none';
@@ -526,33 +529,33 @@
                 p.classList.toggle('hidden');
                 if (p.classList.contains('hidden')) {
                     viBtn.textContent = 'VI Xem';
-                    viBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none';
+                    viBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none active:scale-95';
                 } else {
                     viBtn.textContent = 'VI Ẩn';
-                    viBtn.className = 'bg-slate-500 text-white font-semibold px-3 py-2 rounded-lg text-xs transition cursor-pointer select-none';
+                   viBtn.className = 'bg-slate-500 text-white font-semibold px-3 py-2 rounded-lg text-xs transition cursor-pointer select-none active:scale-95';
                 }
             };
             
             let imgBtn = null;
             if (q.imageUrl && q.imageUrl.trim() !== "") {
                 imgBtn = document.createElement('button');
-                imgBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none';
+                imgBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none active:scale-95';
                 imgBtn.textContent = '🖼️ Hình';
                 imgBtn.onclick = () => {
                     const imgTarget = textSection.querySelector('.img-container');
                     if (imgTarget) {
                         imgTarget.classList.toggle('hidden');
                         if (imgTarget.classList.contains('hidden')) {
-                            imgBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none';
+                            imgBtn.className = 'bg-slate-100 text-slate-700 font-semibold px-3 py-2 rounded-lg text-xs border border-slate-300 transition cursor-pointer select-none active:scale-95';
                         } else {
-                            imgBtn.className = 'bg-slate-500 text-white font-semibold px-3 py-2 rounded-lg text-xs transition cursor-pointer select-none';
+                            imgBtn.className = 'bg-slate-500 text-white font-semibold px-3 py-2 rounded-lg text-xs transition cursor-pointer select-none active:scale-95';
                         }
                     }
                 };
             }
             
             const recordBtn = document.createElement('button');
-            recordBtn.className = 'bg-emerald-50 text-emerald-600 p-2 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none';
+            recordBtn.className = 'bg-emerald-50 text-emerald-600 p-2 rounded-lg border border-emerald-200 hover:bg-emerald-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none active:scale-95';
             recordBtn.innerHTML = '🎤';
             recordBtn.onclick = () => {
                 terminatePlayback();
@@ -560,7 +563,7 @@
             };
             
             const playBtn = document.createElement('button');
-            playBtn.className = 'bg-indigo-50 text-indigo-600 p-2 rounded-lg border border-indigo-200 hover:bg-indigo-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none';
+            playBtn.className = 'bg-indigo-50 text-indigo-600 p-2 rounded-lg border border-indigo-200 hover:bg-indigo-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none active:scale-95';
             playBtn.innerHTML = '▶';
             playBtn.onclick = () => {
                 terminatePlayback();
@@ -573,7 +576,7 @@
             };
 
             const stopIndividualBtn = document.createElement('button');
-            stopIndividualBtn.className = 'bg-red-50 text-red-600 p-2 rounded-lg border border-red-200 hover:bg-red-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none';
+            stopIndividualBtn.className = 'bg-red-50 text-red-600 p-2 rounded-lg border border-red-200 hover:bg-red-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none active:scale-95';
             stopIndividualBtn.innerHTML = '■';
             stopIndividualBtn.onclick = () => {
                 terminatePlayback();
@@ -716,7 +719,7 @@
         currentRecordId = id;
         currentRecordLesson = lesson;
         currentModelAudioUrl = audioUrl;
-
+        recordedBase64Data = null; // ★これを追加（開くたびにリセット）Ver4.11
         recordModalId.textContent = `Bài ${lesson} - ID: ${id}`;
         recordModalText.innerHTML = text;
         
@@ -1022,6 +1025,12 @@
                 recordedExtension = mimeType.includes('mp4') ? 'mp4' : 'webm';
                 const audioBlob = new Blob(audioChunks, { type: mimeType });
                 recordedAudioUrl = URL.createObjectURL(audioBlob);
+                // ★追加：録音完了した瞬間にBase64に変換して変数に保存しておく
+                const reader = new FileReader();
+                reader.readAsDataURL(audioBlob);
+                reader.onloadend = () => {
+                    recordedBase64Data = reader.result;
+                     };
                 updateRecordUI('recorded');
             };                      
 
@@ -1051,10 +1060,11 @@
         }
     });
 
+    // === ここから置き換える ===
     saveRecordBtn.addEventListener('click', async () => {
-        if (!recordedAudioUrl) return;                
-        const originalText = saveRecordBtn.innerHTML;
-        
+        if (!recordedAudioUrl) return;                        
+
+        const originalText = saveRecordBtn.innerHTML;                
         saveRecordBtn.innerHTML = '⏳ 処理中... (Đang xử lý)';
         saveRecordBtn.classList.add('opacity-50', 'pointer-events-none');
 
@@ -1062,32 +1072,28 @@
             recordStatus.textContent = 'MP3に変換しています... (Đang chuyển đổi MP3...)';
             try {
                 const response = await fetch(recordedAudioUrl);
-                const webmBlob = await response.blob();                                
-                
+                const webmBlob = await response.blob();                                                                
                 ffmpeg.FS('writeFile', 'input.webm', await fetchFile(webmBlob));
-                await ffmpeg.run('-i', 'input.webm', '-c:a', 'libmp3lame', '-q:a', '2', 'output.mp3');
-                                                                
+                await ffmpeg.run('-i', 'input.webm', '-c:a', 'libmp3lame', '-q:a', '2', 'output.mp3');                                                                                
                 const mp3Data = ffmpeg.FS('readFile', 'output.mp3');
-                const mp3Blob = new Blob([mp3Data.buffer], { type: 'audio/mp3' });                                
-                
-                downloadBlob(mp3Blob, `Bai${currentRecordLesson}_ID_${currentRecordId}.mp3`);                                
+                const mp3Blob = new Blob([mp3Data.buffer], { type: 'audio/mp3' });                                                                
+                downloadBlob(mp3Blob, `Bai${currentRecordLesson}_ID_${currentRecordId}.mp3`);                                                
                 ffmpeg.FS('unlink', 'input.webm');
                 ffmpeg.FS('unlink', 'output.mp3');
-                recordStatus.textContent = '保存が完了しました！ (Đã lưu MP3)';                                
-                
+                recordStatus.textContent = '保存が完了しました！ (Đã lưu MP3)';                                                                
                 saveRecordBtn.innerHTML = originalText;
                 saveRecordBtn.classList.remove('opacity-50', 'pointer-events-none');
                 return; 
-            } catch (error) {
+             } catch (error) {
                 console.error('MP3変換エラーのため、標準Webmエクスポートに切り替えます:', error);
             }
         }
 
+        // Webm等のフォールバック保存処理
         try {
             recordStatus.textContent = '保存します... (Đang lưu file Webm...)';
             const response = await fetch(recordedAudioUrl);
-            const webmBlob = await response.blob();
-            
+            const webmBlob = await response.blob();                        
             downloadBlob(webmBlob, `Bai${currentRecordLesson}_ID_${currentRecordId}.${recordedExtension}`);
             recordStatus.textContent = '保存が完了しました！ (Đã lưu)';
         } catch (error) {
@@ -1100,6 +1106,26 @@
     });
 
     // -------------------------------------------------------------------------
+    // ★追加：AIに発音アドバイスを受けるボタンの処理（Ver4.11）
+    // -------------------------------------------------------------------------
+aiAdviceBtn.addEventListener('click', () => {
+        // ★async を外し、準備済みの base64 データがあるか確認する
+        if (!recordedBase64Data) {
+            alert('自分の音声を録音してください（またはデータ処理中です）。 / Vui lòng ghi âm trước.');
+            return;
+        }
+
+        const targetText = recordModalText.textContent || recordModalText.innerText;
+
+        // 同期的に sessionStorage に保存
+        sessionStorage.setItem('analysisTargetText', targetText);
+        sessionStorage.setItem('analysisAudioData', recordedBase64Data);
+
+        // 同期処理なので、直接 window.open を実行してもiPhoneでブロックされず、データも引き継がれる
+        window.open('https://itm-kaiwa.github.io/Pronunciation_Analysis/index.html', '_blank');
+    });
+
+    // -------------------------------------------------------------------------
     // 8. ライフサイクル初期化 (Initialization)
     // -------------------------------------------------------------------------
     window.addEventListener('DOMContentLoaded', () => {
@@ -1107,6 +1133,7 @@
     });
 
 })();
-</script>
-</body>
+
+        </script>
+    </body>
 </html>
