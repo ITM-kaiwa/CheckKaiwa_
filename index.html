@@ -235,7 +235,7 @@
         </div>
     </div>
 
-    <!-- ⏱️ ★変更：ドラッグ可能なタイマーオブジェクト -->
+    <!-- ⏱️ ドラッグ可能なタイマーオブジェクト -->
     <div id="floatingTimer" class="hidden fixed z-[9000] bg-white/95 backdrop-blur-sm border-2 border-orange-400 rounded-2xl shadow-2xl flex flex-col items-center justify-between overflow-hidden transition-opacity" style="width: 140px; height: 150px; bottom: 30px; right: 30px; touch-action: none;">
         <!-- ドラッグ用ハンドル部分 -->
         <div id="timerDragHandle" class="bg-orange-500 text-white text-[11px] w-full text-center py-2 font-bold cursor-move flex items-center justify-center gap-1 active:bg-orange-600 transition-colors">
@@ -254,7 +254,7 @@
 
     <div class="w-full text-center py-2 mt-4 border-t border-slate-200/60 text-slate-500">
         <p class="text-xs">&copy; 2026 ITM Group, All rights reserved.</p>
-        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.120a</span>
+        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.120d</span>
     </div>
 
 <script>
@@ -322,6 +322,8 @@
     const backToTopContainer = document.getElementById('backToTopContainer');
     const backToTopBtn = document.getElementById('backToTopBtn');
     const reFetchRandomBtn = document.getElementById('reFetchRandomBtn');
+    
+    // ピンポーン音の読み込み
     const pingpongSound = new Audio('pingpong.mp3');
 
     // 録音モーダル内コンポーネント
@@ -359,7 +361,7 @@
         }
     }
 
-    // ★変更：フローティングタイマーを起動する関数
+    // フローティングタイマーを起動する関数
     function startFloatingTimer() {
         // 現在のモードが「個別指定（individual）」または「ランダム（random）」でなければ終了
         const currentMode = confirmBtn.getAttribute('data-mode');
@@ -391,12 +393,19 @@
                 if (timeLeft > 0) {
                     timerBar.style.width = `${(timeLeft / 3) * 100}%`;
                 } else {
-                    timerBar.style.width = '0%';
-                    // 0以下になったらマイナスアピールとして赤字に変更
-                    timerText.classList.remove('text-orange-500');
-                    timerText.classList.add('text-red-500'); 
+                    // ★追加：ちょうど0秒になった瞬間に1回だけピンポーン音を鳴らす
+                    if (timeLeft === 0) {
+                        timerBar.style.width = '0%';
+                        timerText.classList.remove('text-orange-500');
+                        timerText.classList.add('text-red-500'); 
+                        
+                        pingpongSound.currentTime = 0; // 連続再生に備えてシーク位置をリセット
+                        pingpongSound.play().catch(error => {
+                            console.error("ピンポーン音の再生に失敗しました:", error);
+                        });
+                    }
+                    // -1以降はwidthは0%のまま、赤文字のままカウントダウンだけが進む
                 }
-                // ★0以下になっても clearInterval はせず、そのままマイナスでカウントし続ける
             }, 1000);
         }, 50);
     }
@@ -1117,11 +1126,13 @@
             playModelAudioBtn.innerHTML = '▶️ 模範音声 (Phát mẫu)';
         });
 
+        // 録音モーダル内のピンポーン処理（これは既存のまま）
         modelAudioPlayback.onended = () => {
             playModelAudioBtn.innerHTML = '▶️ 模範音声 (Phát mẫu)';
             pingpongTimeout = setTimeout(() => {
+                pingpongSound.currentTime = 0;
                 pingpongSound.play().catch(error => {
-                    console.error("ピンポーン音の再生に失敗しました:", error);
+                    console.error("ブザー音の再生に失敗しました:３秒経過しました。", error);
                 });
             }, 3000);
         };
