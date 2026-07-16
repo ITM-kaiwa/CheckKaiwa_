@@ -134,11 +134,17 @@
             <!-- ▲ コントロールパネル ここまで ▲ -->
             
             <div id="lessonSelectContainer" class="hidden p-4 bg-orange-50/50 rounded-xl border border-orange-100 space-y-3">
-                <label for="lessonSelect" class="block text-sm font-semibold text-orange-900">
-                    対象の課を選択してください（複数選択可）:
-                    <span class="text-xs font-normal opacity-90 ml-1">Vui lòng chọn bài mục tiêu (có thể chọn nhiều):</span>
-                </label>
-                <div class="flex flex-wrap gap-2 mb-2">
+                <div class="flex flex-row justify-between items-center gap-2 mb-2">
+                    <label for="lessonSelect" class="block text-sm font-semibold text-orange-900">
+                        対象の課を選択してください（複数選択可）:
+                        <span class="text-[10px] md:text-xs font-normal opacity-90 block md:inline mt-0.5 md:mt-0 md:ml-1">Vui lòng chọn bài mục tiêu (có thể chọn nhiều):</span>
+                    </label>
+                    <button id="toggleReviewModeBtn" class="shrink-0 bg-white border border-orange-300 text-orange-600 hover:bg-orange-50 text-xs px-3 py-1.5 rounded-lg font-bold transition shadow-sm active:scale-95 flex items-center justify-center">
+                        🔄 復習モード
+                    </button>
+                </div>
+                
+                <div id="presetButtonsContainer" class="hidden flex-wrap gap-2 mb-2 p-3 bg-white/60 border border-orange-200 rounded-xl transition-all">
                     <button class="preset-btn bg-white text-xs text-orange-700 px-2.5 py-1.5 rounded-lg border border-orange-200 hover:bg-orange-50 transition font-medium" data-start="1" data-end="3">1-3課</button>
                     <button class="preset-btn bg-white text-xs text-orange-700 px-2.5 py-1.5 rounded-lg border border-orange-200 hover:bg-orange-50 transition font-medium" data-start="4" data-end="7">4-7課</button>
                     <button class="preset-btn bg-white text-xs text-orange-700 px-2.5 py-1.5 rounded-lg border border-orange-200 hover:bg-orange-50 transition font-medium" data-start="8" data-end="12">8-12課</button>
@@ -280,7 +286,7 @@
 
     <div class="w-full text-center py-2 mt-4 border-t border-slate-200/60 text-slate-500">
         <p class="text-xs">&copy; 2026 ITM Group, All rights reserved.</p>
-        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.40b</span>
+        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.50a</span>
     </div>
 
 <script>
@@ -354,6 +360,10 @@
     const backToTopBtn = document.getElementById('backToTopBtn');
     const reFetchRandomBtn = document.getElementById('reFetchRandomBtn');
     
+    // 復習モード要素
+    const toggleReviewModeBtn = document.getElementById('toggleReviewModeBtn');
+    const presetButtonsContainer = document.getElementById('presetButtonsContainer');
+
     // コントロールパネル要素
     const controlPanelWrapper = document.getElementById('controlPanelWrapper');
     const controlPanel = document.getElementById('controlPanel');
@@ -869,6 +879,32 @@
         }
         
         lessonSelectContainer.classList.add('hidden');
+    }
+
+    // -------------------------------------------------------------------------
+    // 復習モード（プリセットボタン群の開閉）ロジック
+    // -------------------------------------------------------------------------
+    if (toggleReviewModeBtn && presetButtonsContainer) {
+        toggleReviewModeBtn.addEventListener('click', () => {
+            const isHidden = presetButtonsContainer.classList.contains('hidden');
+            if (isHidden) {
+                // 表示状態にする
+                presetButtonsContainer.classList.remove('hidden');
+                presetButtonsContainer.classList.add('flex');
+                
+                // ボタンのデザインをON（ハイライト）にする
+                toggleReviewModeBtn.classList.remove('bg-white', 'text-orange-600', 'border-orange-300');
+                toggleReviewModeBtn.classList.add('bg-orange-500', 'text-white', 'border-orange-500');
+            } else {
+                // 非表示状態にする
+                presetButtonsContainer.classList.add('hidden');
+                presetButtonsContainer.classList.remove('flex');
+                
+                // ボタンのデザインをOFF（通常）に戻す
+                toggleReviewModeBtn.classList.add('bg-white', 'text-orange-600', 'border-orange-300');
+                toggleReviewModeBtn.classList.remove('bg-orange-500', 'text-white', 'border-orange-500');
+            }
+        });
     }
 
     // -------------------------------------------------------------------------
