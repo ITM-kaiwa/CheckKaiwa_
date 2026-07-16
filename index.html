@@ -9,7 +9,7 @@
     <script src="qadata_gen.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/coi-serviceworker/0.1.7/coi-serviceworker.min.js"></script>
-    <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>        
+    <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
     
     <style>
         /* モーダル（ポップアップ）用レイヤー */
@@ -96,9 +96,9 @@
                             <button id="randomPlusBtn" class="bg-orange-50 text-orange-700 w-10 h-10 rounded-lg border border-orange-200 flex items-center justify-center font-bold text-2xl hover:bg-orange-100 transition active:scale-95 shadow-sm">＋</button>
                         </div>
                     </div>
-                    
+                
                 </div>
-        
+            
                 <div class="flex flex-col md:flex-row gap-3 w-full md:w-auto ml-auto">
                     <button id="reshuffleBtn" class="hidden w-full md:w-auto md:min-w-[150px] bg-emerald-400 text-white py-3 rounded-xl font-bold hover:bg-emerald-500 transition shadow-sm active:scale-95 flex flex-col items-center justify-center leading-tight px-4 text-sm">
                         <span>再シャッフル</span>
@@ -112,7 +112,10 @@
             </div>
             
             <div id="lessonSelectContainer" class="hidden p-4 bg-orange-50/50 rounded-xl border border-orange-100 space-y-3">
-                <label for="lessonSelect" class="block text-sm font-semibold text-orange-900">対象の課を選択してください（複数選択可）:</label>
+                <label for="lessonSelect" class="block text-sm font-semibold text-orange-900">
+                    対象の課を選択してください（複数選択可）:
+                    <span class="text-xs font-normal opacity-90 ml-1">Vui lòng chọn bài mục tiêu (có thể chọn nhiều):</span>
+                </label>
                 <div class="flex flex-wrap gap-2 mb-2">
                     <button class="preset-btn bg-white text-xs text-orange-700 px-2.5 py-1.5 rounded-lg border border-orange-200 hover:bg-orange-50 transition font-medium" data-start="1" data-end="3">1-3課</button>
                     <button class="preset-btn bg-white text-xs text-orange-700 px-2.5 py-1.5 rounded-lg border border-orange-200 hover:bg-orange-50 transition font-medium" data-start="4" data-end="7">4-7課</button>
@@ -126,7 +129,7 @@
                     <button class="preset-btn bg-white text-xs text-orange-700 px-2.5 py-1.5 rounded-lg border border-orange-200 hover:bg-orange-50 transition font-medium" data-start="46" data-end="50">46-50課</button>
                 </div>
                 <select id="lessonSelect" multiple class="w-full min-h-[120px] bg-white border border-orange-200 rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"></select>
-                    
+                
                 <div class="flex flex-col gap-2 mt-3">
                     <button id="confirmBtn" class="w-full bg-orange-600 text-white py-2.5 rounded-xl font-medium hover:bg-orange-700 transition shadow-sm active:scale-95 text-center leading-tight">
                         通常表示<br><span class="text-xs font-normal opacity-90">Hiển thị theo thứ tự</span>
@@ -141,8 +144,8 @@
         </div>
         
         <div id="questionsContainer" class="space-y-4"></div>
-        
-       <div id="backToTopContainer" class="hidden mt-8 flex flex-col items-center gap-4 pb-4">
+       
+        <div id="backToTopContainer" class="hidden mt-8 flex flex-col items-center gap-4 pb-4">
             <button id="backToTopBtn" class="bg-slate-700 text-white px-8 py-3 rounded-xl font-medium hover:bg-slate-800 transition shadow-sm active:scale-95 flex flex-col items-center leading-tight">
                 <span>⬆️ カードの先頭に戻る</span>
                 <span class="text-xs font-normal opacity-80 mt-1">Trở lên đầu trang</span>
@@ -255,7 +258,7 @@
 
     <div class="w-full text-center py-2 mt-4 border-t border-slate-200/60 text-slate-500">
         <p class="text-xs">&copy; 2026 ITM Group, All rights reserved.</p>
-        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.320a-gen</span>
+        <span class="inline-block bg-slate-200 text-slate-400 text-[12px] px-2 py-0.5 rounded-full font-semibold shadow-inner mt-2">Ver4.330a-gen</span>
     </div>
 
 <script>
@@ -270,9 +273,10 @@
     let audioQueue = [];
     let isPlayingQueue = false;
     let queueIndex = 0;
-    let playbackTimeout = null;          
-    let currentFilteredQuestions = [];   
-
+    let playbackTimeout = null;
+          
+    let currentFilteredQuestions = [];
+   
     // 録音・模範音声・変換エンジン周りの状態管理
     let mediaRecorder = null;
     let audioChunks = [];
@@ -281,10 +285,14 @@
     let recordedExtension = 'webm';
     let currentRecordId = "";
     let currentRecordLesson = "";
-    let currentModelAudioUrl = null;     
-    let modelAudioPlayback = null;       
-    let pingpongTimeout = null;          
-    let recordedBase64Data = null; 
+    let currentModelAudioUrl = null;
+         
+    let modelAudioPlayback = null;
+           
+    let pingpongTimeout = null;
+              
+    let recordedBase64Data = null;
+     
     let ffmpeg = null;
     let fetchFile = null;
     let isFfmpegLoaded = false;
@@ -469,7 +477,7 @@
         }
         const lessons = [...new Set(questions.map(q => q.lesson))].sort((a, b) => a - b);
         lessonSelect.innerHTML = '';
-                
+        
         lessons.forEach(l => {
             const option = document.createElement('option');
             option.value = l;
@@ -512,6 +520,20 @@
         const targetCard = document.querySelector(`.question-card[data-id="${id}"]`);
         if (targetCard) {
             targetCard.classList.add('border-orange-500', 'bg-orange-50/50', 'ring-2', 'ring-orange-400');
+
+            // --- 画像の自動表示処理 ---
+            const imgTarget = targetCard.querySelector('.img-container');
+            if (imgTarget && imgTarget.classList.contains('hidden')) {
+                imgTarget.classList.remove('hidden'); // 画像を表示
+                // 画像ボタン（🖼️ Hình）のスタイルをアクティブ状態に更新
+                const buttons = targetCard.querySelectorAll('button');
+                buttons.forEach(btn => {
+                    if (btn.textContent === '🖼️ Hình') {
+                        btn.className = 'bg-slate-500 text-white font-semibold px-3 py-2 rounded-lg text-xs transition cursor-pointer select-none active:scale-95';
+                    }
+                });
+            }
+            // --------------------------
         }
     }
 
@@ -530,9 +552,9 @@
 
     function executeNextQueueItem() {
         // 次の音声が始まる時に、前のタイマーが残っていれば消す
-        hideFloatingTimer();
+        hideFloatingTimer(); 
         
-     if (!isPlayingQueue || queueIndex >= audioQueue.length) {
+        if (!isPlayingQueue || queueIndex >= audioQueue.length) {
             terminatePlayback();
             return;
         }
@@ -728,6 +750,7 @@
                     alert('音声ファイルがまだ準備されていないか、読み込めませんでした。');
                 });
             };
+
             const stopIndividualBtn = document.createElement('button');
             stopIndividualBtn.className = 'bg-red-50 text-red-600 p-2 rounded-lg border border-red-200 hover:bg-red-100 transition flex items-center justify-center w-8 h-8 font-bold cursor-pointer select-none active:scale-95';
             stopIndividualBtn.innerHTML = '■';
@@ -883,7 +906,7 @@
             playRecordBtn.classList.add('opacity-50', 'pointer-events-none');
             saveRecordBtn.classList.add('opacity-50', 'pointer-events-none');
             recordStatus.textContent = '待機中... (Sẵn sàng)';
-            
+        
         } else if (state === 'recording') {
             startRecordBtn.disabled = true;
             startRecordBtn.className = 'bg-red-600 text-white border border-red-700 py-2 rounded-xl text-sm font-bold transition flex items-center justify-center gap-2 animate-pulse';
@@ -895,7 +918,7 @@
             playRecordBtn.classList.add('opacity-50', 'pointer-events-none');
             saveRecordBtn.classList.add('opacity-50', 'pointer-events-none');
             recordStatus.textContent = '録音しています... (Đang ghi âm)';
-            
+        
         } else if (state === 'recorded') {
             startRecordBtn.disabled = false;
             startRecordBtn.className = 'bg-red-50 text-red-600 border border-red-200 py-2 rounded-xl text-sm font-bold hover:bg-red-100 transition flex items-center justify-center gap-2';
@@ -916,6 +939,7 @@
         currentRecordLesson = lesson;
         currentModelAudioUrl = audioUrl;
         recordedBase64Data = null; 
+        
         recordModalId.textContent = `Bài ${lesson} - ID: ${id}`;
         recordModalText.innerHTML = text;
         
@@ -1006,6 +1030,7 @@
         lessonSelectContainer.classList.add('hidden');
         randomCountContainer.classList.add('hidden'); 
         randomCountContainer.classList.remove('flex'); 
+        
         confirmBtn.setAttribute('data-mode', 'normal');
         currentFilteredQuestions = [...questions];
         renderCards(currentFilteredQuestions);
@@ -1139,8 +1164,8 @@
         });
     }
 
-    stopBtn.addEventListener('click', terminatePlayback);            
-
+    stopBtn.addEventListener('click', terminatePlayback);
+        
     toggleManualBtn.addEventListener('click', () => manualContainer.classList.add('manual-open'));
     closeManualBtn.addEventListener('click', () => manualContainer.classList.remove('manual-open'));
     modalCloseOkBtn.addEventListener('click', () => manualContainer.classList.remove('manual-open'));
@@ -1208,7 +1233,7 @@
         // 録音モーダル内のピンポーン処理
         modelAudioPlayback.onended = () => {
             playModelAudioBtn.innerHTML = '▶️ 模範音声 (Phát mẫu)';
-       
+               
         };
     });
 
@@ -1217,12 +1242,12 @@
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
             mediaRecorder = new MediaRecorder(stream);
             audioChunks = [];
-                        
+            
             if (recordedAudioUrl) {
                 URL.revokeObjectURL(recordedAudioUrl);
                 recordedAudioUrl = null;
             }
-                        
+            
             mediaRecorder.ondataavailable = e => {
                 if (e.data.size > 0) audioChunks.push(e.data);
             };
@@ -1239,8 +1264,8 @@
                     recordedBase64Data = reader.result;
                 };
                 updateRecordUI('recorded');
-            };                      
-
+            };
+          
             mediaRecorder.start();
             updateRecordUI('recording');
         } catch (err) {
@@ -1268,9 +1293,10 @@
     });
 
     saveRecordBtn.addEventListener('click', async () => {
-        if (!recordedAudioUrl) return;                        
-
-        const originalText = saveRecordBtn.innerHTML;                
+        if (!recordedAudioUrl) return;
+            
+        const originalText = saveRecordBtn.innerHTML;
+            
         saveRecordBtn.innerHTML = '⏳ 処理中... (Đang xử lý)';
         saveRecordBtn.classList.add('opacity-50', 'pointer-events-none');
 
@@ -1278,19 +1304,24 @@
             recordStatus.textContent = 'MP3に変換しています... (Đang chuyển đổi MP3...)';
             try {
                 const response = await fetch(recordedAudioUrl);
-                const webmBlob = await response.blob();                                                  
+                const webmBlob = await response.blob();
+                
                 ffmpeg.FS('writeFile', 'input.webm', await fetchFile(webmBlob));
-                await ffmpeg.run('-i', 'input.webm', '-c:a', 'libmp3lame', '-q:a', '2', 'output.mp3');                                                              
+                await ffmpeg.run('-i', 'input.webm', '-c:a', 'libmp3lame', '-q:a', '2', 'output.mp3');
+                
                 const mp3Data = ffmpeg.FS('readFile', 'output.mp3');
-                const mp3Blob = new Blob([mp3Data.buffer], { type: 'audio/mp3' });                                       
-                downloadBlob(mp3Blob, `Bai${currentRecordLesson}_ID_${currentRecordId}.mp3`);                                                
+                const mp3Blob = new Blob([mp3Data.buffer], { type: 'audio/mp3' });
+                
+                downloadBlob(mp3Blob, `Bai${currentRecordLesson}_ID_${currentRecordId}.mp3`);
+                
                 ffmpeg.FS('unlink', 'input.webm');
                 ffmpeg.FS('unlink', 'output.mp3');
-                recordStatus.textContent = '保存が完了しました！ (Đã lưu MP3)';                                                      
+                recordStatus.textContent = '保存が完了しました！ (Đã lưu MP3)';
+                
                 saveRecordBtn.innerHTML = originalText;
                 saveRecordBtn.classList.remove('opacity-50', 'pointer-events-none');
-                return; 
-             } catch (error) {
+                return;  
+            } catch (error) {
                 console.error('MP3変換エラーのため、標準Webmエクスポートに切り替えます:', error);
             }
         }
@@ -1298,7 +1329,8 @@
         try {
             recordStatus.textContent = '保存します... (Đang lưu file Webm...)';
             const response = await fetch(recordedAudioUrl);
-            const webmBlob = await response.blob();                        
+            const webmBlob = await response.blob();
+            
             downloadBlob(webmBlob, `Bai${currentRecordLesson}_ID_${currentRecordId}.${recordedExtension}`);
             recordStatus.textContent = '保存が完了しました！ (Đã lưu)';
         } catch (error) {
@@ -1332,7 +1364,6 @@
     });
 
 })();
-
 </script>
 </body>
 </html>
