@@ -1,5 +1,5 @@
 // =============================================================================
-// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.02p
+// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.10a
 // =============================================================================
 const questions = [
             
@@ -560,7 +560,7 @@ const questions = [
     {
         "lesson": 42,
         "id": "42-2b",
-        "text": "<ruby>好<rt>す</rt></ruby>きな　<ruby>仕事<rt>しごと</rt></ruby>をするために、<ruby>何<rt>なに</rt></ruby>をしたらいいですか。",
+        "text": "<ruby>好<rt>す</rt></ruby>きな<ruby>仕事<rt>しごと</rt></ruby>をするために、<ruby>何<rt>なに</rt></ruby>をしたらいいですか。",
         "viText": "Tôi nên làm gì để làm công việc mình yêu thích?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.2b.mp3"
     },
@@ -589,10 +589,10 @@ const questions = [
     //---42.6
     {
         "lesson": 42,
-        "id": "42-6a",
+        "id": "42-6",
         "text": "<ruby>働<rt>はたら</rt></ruby>くのに<ruby>良<rt>い</rt></ruby>い<ruby>国<rt>くに</rt></ruby>は、どこだと<ruby>思<rt>おも</rt></ruby>いますか。",
         "viText": "Bạn nghĩ quốc gia nào là nơi tốt để làm việc?",
-        "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.6a.mp3"
+        "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.6.mp3"
     },
     {
         "lesson": 42,
@@ -730,14 +730,14 @@ const questions = [
     {
         "lesson": 44,
         "id": "44-4",
-        "text": "<ruby>聴解<rt>ちょうかい</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>で、<ruby>音<rt>おと</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<ruby>小<rt>ちい</rt></ruby>さい<ruby>時<rt>とき</rt></ruby>、<ruby>先生<rt>せんせい</rt></ruby>に<ruby>何<rt>なん</rt></ruby>と　<ruby>言<rt>い</rt></ruby>いますか。　　（※「～ので、Aに／Aく していただけませんか。」）",
+        "text": "<ruby>聴解<rt>ちょうかい</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>で、<ruby>音<rt>おと</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<ruby>小<rt>ちい</rt></ruby>さい<ruby>時<rt>とき</rt></ruby>、<ruby>先生<rt>せんせい</rt></ruby>に<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。　　（※「～ので、Aに／Aく していただけませんか。」）",
         "viText": "Trong lớp nghe, khi âm thanh hơi nhỏ, bạn nói gì với giáo viên?　　(※ ’Bạn có thể làm ơn /A-ku đến A, vậy ~?’",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.4.mp3"
     },
     {
         "lesson": 44,
         "id": "44-5",
-        "text": "<ruby>宿題<rt>しゅくだい</rt></ruby>が　<ruby>難<rt>むずか</rt></ruby>しすぎます/<ruby>多<rt>おお</rt></ruby>すぎます。<ruby>先生<rt>せんせい</rt></ruby>に <ruby>何<rt>なん</rt></ruby>と <ruby>頼<rt>たの</rt></ruby>みますか。　（※「Aく/Aに　していただけませんか。」）　　",
+        "text": "<ruby>宿題<rt>しゅくだい</rt></ruby>が<ruby>難<rt>むずか</rt></ruby>しすぎます/<ruby>多<rt>おお</rt></ruby>すぎます。<ruby>先生<rt>せんせい</rt></ruby>に <ruby>何<rt>なん</rt></ruby>と <ruby>頼<rt>たの</rt></ruby>みますか。　（※「Aく/Aに　していただけませんか。」）　　",
         "viText": "Bài tập về nhà quá khó hoặc quá nhiều. Bạn muốn hỏi giáo viên điều gì?　(※ ’Bạn có thể làm cho nó là A-ku/A không?’)　　",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.5.mp3"
     },
@@ -866,8 +866,8 @@ const questions = [
     {
         "lesson": 46,
         "id": "46-1",
-        "text": "<ruby>大学<rt>だいがく</rt></ruby>/<ruby>短期大学<rt>たんきだいがく</rt></ruby>へ<ruby>入<rt>はい</rt></ruby>ったばかりの<ruby>時<rt>とき</rt></ruby>、どうでしたか。",
-        "viText": "Khi bạn lần đầu tiên vào đại học / cao đẳng như thế nào?",
+        "text": "<ruby>会<rt>あ</rt></ruby>ったばかりの<ruby>日本人<rt>にほんじん</rt></ruby>と、<ruby>日本語<rt>にほんご</rt></ruby>で<ruby>話<rt>はな</rt></ruby>せますか。",
+        "viText": "Bạn có thể nói chuyện bằng tiếng Nhật với người Nhật mà bạn vừa mới gặp không?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/46.1.mp3"
     },
     {
@@ -894,14 +894,14 @@ const questions = [
     {
         "lesson": 46,
         "id": "46-5a",
-        "text": "<ruby>今<rt>いま</rt></ruby>、<ruby>出発<rt>しゅっぱつ</rt></ruby>したら○○に、<ruby>何時<rt>なんじ</rt></ruby>ごろ<ruby>着<rt>つ</rt></ruby>きますか。  （※「～はずです」を<ruby>使<rt>つか</rt></ruby>って<ruby>説明<rt>せつめい</rt></ruby>してください。）",
+        "text": "<ruby>今<rt>いま</rt></ruby>、<ruby>出発<rt>しゅっぱつ</rt></ruby>したら○○に、<ruby>何時<rt>なんじ</rt></ruby>ごろ<ruby>着<rt>つ</rt></ruby>きますか。 （※「～はずです」を<ruby>使<rt>つか</rt></ruby>って<ruby>答<rt>こた</rt></ruby>えてください。）",
         "viText": "Nếu tôi rời đi bây giờ, khi nào tôi sẽ đến ○○?  (※ Vui lòng trả lời bằng ’~はずです’.) ）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/46.5a.mp3"
     },
     {
         "lesson": 46,
         "id": "46-5b",
-        "text": "<ruby>田中<rt>たなか</rt></ruby>さんと<ruby>話<rt>はな</rt></ruby>したいですが、<ruby>今<rt>いま</rt></ruby>どこにいますか。 （※「～はずです」を<ruby>使<rt>つか</rt></ruby>って<ruby>説明<rt>せつめい</rt></ruby>してください。）",
+        "text": "<ruby>田中<rt>たなか</rt></ruby>さんと<ruby>話<rt>はな</rt></ruby>したいですが、<ruby>今<rt>いま</rt></ruby>どこにいますか。（※「～はずです」を<ruby>使<rt>つか</rt></ruby>って<ruby>答<rt>こた</rt></ruby>えてください。）",
         "viText": "Tôi muốn nói chuyện với ông Tanaka - bây giờ ông đang ở đâu? (※ Vui lòng trả lời bằng ’~はずです’.) ）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/46.5b.mp3"
     },
@@ -1019,7 +1019,7 @@ const questions = [
     {
         "lesson": 48,
         "id": "48-1",
-        "text": "<ruby>授業中<rt>じゅぎょうちゅう</rt></ruby>、<ruby>先生<rt>せんせい</rt></ruby>は、みなさんに<ruby>日本語<rt>にほんご</rt></ruby>で<ruby>話<rt>はなし</rt></ruby>をさせますか。ベトナム<ruby>語<rt>ご</rt></ruby>で<ruby>話<rt>はなし</rt></ruby>をさせますか。",
+        "text": "<ruby>授業中<rt>じゅぎょうちゅう</rt></ruby>、<ruby>先生<rt>せんせい</rt></ruby>は、みなさんに<ruby>日本語<rt>にほんご</rt></ruby>で<ruby>話<rt>はな</rt></ruby>させますか。ベトナム<ruby>語<rt>ご</rt></ruby>で<ruby>話<rt>はなし</rt></ruby>をさせますか。",
         "viText": "Trong giờ học, giáo viên có yêu cầu bạn nói tiếng Nhật không? Tôi có nên nói tiếng Việt không?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/48.1.mp3",
         "groupId": "group48-1"
@@ -1094,7 +1094,7 @@ const questions = [
     {
         "lesson": 49,
         "id": "49-1",
-        "text": "（<ruby>日本人<rt>にほんじん</rt></ruby>）<ruby>先生<rt>せんせい</rt></ruby>に、いつベトナムに<ruby>来<rt>き</rt></ruby>たか、<ruby>聞<rt>き</rt></ruby>いてください。",
+        "text": "（<ruby>日本人<rt>にほんじん</rt></ruby>の）<ruby>先生<rt>せんせい</rt></ruby>に、いつベトナムに<ruby>来<rt>き</rt></ruby>たか、<ruby>聞<rt>き</rt></ruby>いてください。",
         "viText": "(Tiếng Nhật) Cô giáo, xin hỏi khi bạn đến Việt Nam.",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/49.1.mp3"
     },
@@ -1185,7 +1185,7 @@ const questions = [
     {
         "lesson": 50,
         "id": "50-5",
-        "text": "<ruby>社長<rt>しゃちょう</rt></ruby>がちょっと<ruby>疲<rt>つか</rt></ruby>れているようです。<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>を<ruby>持<rt>も</rt></ruby>ってきます。<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。　※ （<ruby>謙譲語<rt>けんじょうご</rt></ruby>）ましょうか。（<ruby>尊敬語<rt>そんけいご</rt></ruby>）ますか。",
+        "text": "<ruby>社長<rt>しゃちょう</rt></ruby>がちょっと<ruby>疲<rt>つか</rt></ruby>れているようです。<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>を<ruby>持<rt>も</rt></ruby>ってきます。<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。　 （※「<ruby>謙譲語<rt>けんじょうご</rt></ruby>）ましょうか。」、「<ruby>尊敬語<rt>そんけいご</rt></ruby>）ますか。」）",
         "viText": "Tổng thống có vẻ hơi mệt mỏi. Tôi sẽ mang đồ uống của tôi. Tôi nên đặt nó như thế nào?　* (Biểu hiện khiêm tốn) Chúng ta được không? (Kính ngữ) Chúng ta phải không?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/50.5.mp3"
     },
