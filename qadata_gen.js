@@ -1,5 +1,5 @@
 // =============================================================================
-// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.10a
+// DATA-PART: QUESTION DATA VARIABLE (qadata.js) Ver3.20a
 // =============================================================================
 const questions = [
             
@@ -465,29 +465,29 @@ const questions = [
         "lesson": 41,
         "id": "41-1",
         "text": "クラスの<ruby>友達<rt>ともだち</rt></ruby>から<ruby>何<rt>なに</rt></ruby>かもらったことがありますか。<ruby>誰<rt>だれ</rt></ruby>に<ruby>何<rt>なに</rt></ruby>をもらいましたか。　（※「はい、あります。○さんに●をもらいました。」、「いいえ、ありません。」）",
-        "viText": "Bạn đã bao giờ nhận được bất cứ điều gì từ các bạn cùng lớp chưa? Ai đã cho tôi những gì tôi nhận được?　(※ ’Vâng, vâng, có. Tôi đã nhận được ● từ ○-san.’ ’Không, không, tôi không.’)",
+        "viText": "Bạn đã từng nhận gì đó từ bạn cùng lớp chưa? Bạn đã nhận từ ai cái gi? （※ Dùng mẫu 「はい、あります。○さんに●をもらいました。」、「いいえ、ありません。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.1.mp3"
     },
     {
         "lesson": 41,
         "id": "41-2",
         "text": "<ruby>先生<rt>せんせい</rt></ruby>から<ruby>何<rt>なに</rt></ruby>かもらったことがありますか。それは<ruby>何<rt>なん</rt></ruby>ですか。　（※はい、あります。○○をいただきました。」/「いいえ、ありません。」）",
-        "viText": "Bạn đã bao giờ nhận được bất cứ điều gì từ giáo viên của mình chưa? Nó là gì?　(※Có.) Tôi đã nhận được ○○.’ /’Không, không.’)",
+        "viText": "Bạn đã từng nhận cái gì đó từ giáo viên của mình chưa? Nó là gì? （※ Dùng mẫu 「はい、あります。○○をいただきました。」/「いいえ、ありません。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.2.mp3"
     },
-    //---41.3 
+    //---41.3 ベトナム語入れる。
     {
         "lesson": 41,
         "id": "41-3",
         "text": "<ruby>誰<rt>だれ</rt></ruby>がセンターのルールを<ruby>説明<rt>せつめい</rt></ruby>してくれましたか。",
-        "viText": "Ai đã giải thích nội quy của trung tâm tiếng Nhật cho bạn?",
+        "viText": "",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.3.mp3"
     },
     {
         "lesson": 41,
         "id": "41-4",
         "text": "<ruby>今<rt>いま</rt></ruby>まで<ruby>誰<rt>だれ</rt></ruby>が<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてくれましたか。",
-        "viText": "Ai đã dạy bạn tiếng Nhật cho đến bây giờ?",
+        "viText": "Ai đã dạy tiếng Nhật cho bạn đến bây giờ?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.4.mp3"
     },
     //---41.5
@@ -495,52 +495,52 @@ const questions = [
         "lesson": 41,
         "id": "41-5",
         "text": "<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>にもう<ruby>一度<rt>いちど</rt></ruby><ruby>説明<rt>せつめい</rt></ruby>してもらいたい<ruby>時<rt>とき</rt></ruby>、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。　（※「～んですが、～くださいませんか。/いただけませんか。」）",
-        "viText": "Khi bạn muốn người trong công ty giải thích lại, bạn sẽ nói gì?　(※ ’~, nhưng, bạn có thể làm ơn ~? / Bạn có thể vui lòng chấp nhận nó không?’ ）",
+        "viText": "Khi bạn muốn giáo viên giải thích lại 1 lần nữa, bạn sẽ nói gì? （※ Dùng mẫu 「～んですが、～くださいませんか。/いただけませんか。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.5.mp3"
     },
-    //---41.6
+    //---41.6　ベトナム語を入れる
     {
         "lesson": 41,
         "id": "41-6",
         "text": "<ruby>課長<rt>かちょう</rt></ruby>に<ruby>仕事<rt>しごと</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>してもらいたいとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。（※「～ていただけませんか。」)",
-        "viText": "Khi muốn nhờ trưởng phòng kiểm tra công việc, bạn nên nói như thế nào?",
+        "viText": "",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.6.mp3"
     },
-    //---41.7
+    //---41.7　ベトナム語を入れる
     {
         "lesson": 41,
         "id": "41-7",
         "text": "<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>が<ruby>速<rt>はや</rt></ruby>くてわかりません。ゆっくり<ruby>話<rt>はな</rt></ruby>してもらいたいとき、<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。　（※「もう少し～ていただけませんか。」）",
-        "viText": "Người trong công ty nói nhanh quá nên tôi không hiểu. Khi muốn nhờ họ nói chậm lại, bạn nên nói như thế nào?",
+        "viText": "",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.7.mp3"
     },
-    //---41.8
+    //---41.8　ベトナム語を入れる
     {
         "lesson": 41,
         "id": "41-8",
         "text": "<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>が<ruby>仕事<rt>しごと</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてくれました。<ruby>何<rt>なん</rt></ruby>とお<ruby>礼<rt>れい</rt></ruby>を<ruby>言<rt>い</rt></ruby>いますか。　（※「～くださって…。」　）",
-        "viText": "Khi người trong công ty hướng dẫn công việc cho mình, bạn nên nói lời cảm ơn như thế nào?",
+        "viText": "",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.8.mp3"
     },
     {
         "lesson": 41,
         "id": "41-9a",
         "text": "あなたの<ruby>妹<rt>いもうと</rt></ruby>の<ruby>誕生日<rt>たんじょうび</rt></ruby>です。<ruby>何<rt>なに</rt></ruby>をしてあげたいですか。",
-        "viText": "Đó là sinh nhật của em gái bạn. Bạn muốn làm gì cho họ?",
+        "viText": "Ngày sinh nhật của em gái bạn. Bạn muốn làm gì cho em ấy?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.9a.mp3"
     },
     {
         "lesson": 41,
         "id": "41-9b",
         "text": "あなたの<ruby>弟<rt>おとうと</rt></ruby>の<ruby>誕生日<rt>たんじょうび</rt></ruby>です。<ruby>何<rt>なに</rt></ruby>をしてあげたいですか。",
-        "viText": "Đó là sinh nhật của anh trai bạn. Bạn muốn làm gì cho họ?",
+        "viText": "Ngày sinh nhật của em trai bạn. Bạn muốn làm gì cho anh ấy?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.9b.mp3"
     },
     {
         "lesson": 41,
         "id": "41-10",
         "text": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>らなくて、<ruby>花<rt>はな</rt></ruby>や<ruby>野菜<rt>やさい</rt></ruby>の<ruby>元気<rt>げんき</rt></ruby>がない<ruby>時<rt>とき</rt></ruby>、どうしますか。",
-        "viText": "Bạn sẽ làm gì khi trời không mưa và hoa và rau không tốt cho sức khỏe?",
+        "viText": "Khi trời không mưa, hoa và rau không khỏe (không tươi), bạn sẽ làm gì?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/41.10.mp3"
     },
     {
@@ -561,7 +561,7 @@ const questions = [
         "lesson": 42,
         "id": "42-2b",
         "text": "<ruby>好<rt>す</rt></ruby>きな<ruby>仕事<rt>しごと</rt></ruby>をするために、<ruby>何<rt>なに</rt></ruby>をしたらいいですか。",
-        "viText": "Tôi nên làm gì để làm công việc mình yêu thích?",
+        "viText": "Khi bị cảm lạnh, bạn nên làm gì để nhanh chóng hồi phục?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.2b.mp3"
     },
     {
@@ -575,7 +575,7 @@ const questions = [
         "lesson": 42,
         "id": "42-4",
         "text": "<ruby>日本<rt>にほん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>くためには、どのぐらい<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>すればいいと<ruby>思<rt>おも</rt></ruby>いますか。",
-        "viText": "Bạn nghĩ mình cần học tiếng Nhật bao nhiêu để làm việc tại Nhật Bản?",
+        "viText": "Bạn nghĩ mình cần học tiếng Nhật bao nhiêu lâu để làm việc tại Nhật Bản?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.4.mp3"
     },
     //---42.5
@@ -583,7 +583,7 @@ const questions = [
         "lesson": 42,
         "id": "42-5",
         "text": "<ruby>何<rt>なん</rt></ruby>のために<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きますか。（※「～ために…。」）",
-        "viText": "Bạn đi Nhật Bản để làm gì?",
+        "viText": "Bạn nghĩ mục đích của bài kiểm tra phản xạ hội thoại này là gì?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.5.mp3"
     },
     //---42.6
@@ -605,21 +605,21 @@ const questions = [
         "lesson": 42,
         "id": "42-7",
         "text": "１<ruby>日<rt>にち</rt></ruby><ruby>自由<rt>じゆう</rt></ruby>な<ruby>時間<rt>じかん</rt></ruby>があります。その<ruby>時間<rt>じかん</rt></ruby>を<ruby>何<rt>なに</rt></ruby>に<ruby>使<rt>つか</rt></ruby>いますか。",
-        "viText": "Bạn có một ngày rảnh rỗi. Bạn dành thời gian đó để làm gì?",
+        "viText": "Bạn có một ngày rảnh rỗi. Bạn sẽ dùng khoảng thời gian đó vào việc gì?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.7.mp3"
     },
     {
         "lesson": 42,
         "id": "42-8",
         "text": "100<ruby>万<rt>まん</rt></ruby>VNDあります。<ruby>誰<rt>だれ</rt></ruby>のために、<ruby>何<rt>なん</rt></ruby>のために<ruby>使<rt>つか</rt></ruby>いますか。",
-        "viText": "Có 1.000.000 đồng. Vì ai, và vì mục đích gì?",
+        "viText": "Bạn có 1tr VND. Bạn sẽ dùng số tiền đó cho ai và vào mục đích gì?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.8.mp3"
     },
     {
         "lesson": 42,
         "id": "42-9",
         "text": "あなたは、いつも<ruby>何<rt>なに</rt></ruby>をするためにスマホを<ruby>使<rt>つか</rt></ruby>っていますか。",
-        "viText": "Bạn thường sử dụng điện thoại thông minh của mình để làm gì?",
+        "viText": "Bạn thường sử dụng điện thoại của mình để làm việc gì?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/42.9.mp3"
     },
     //---42.10
@@ -634,7 +634,7 @@ const questions = [
         "lesson": 43,
         "id": "43-1",
         "text": "この<ruby>絵<rt>え</rt></ruby>を<ruby>見<rt>み</rt></ruby>て、「Vそうですよ」で、<ruby>注意<rt>ちゅうい</rt></ruby>してください。　（※「Vそうですよ。」）",
-        "viText": "Nhìn vào bức ảnh này và nói, ’V đúng’, vì vậy hãy cẩn thận.　(※ ’V Đúng vậy.’)",
+        "viText": "Hãy nhìn bức tranh này và dùng mẫu câu 「Vそうですよ」 để nhắc nhở/cảnh báo người khác.",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.1.mp3",
         "imageUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.1.jpg"
     },
@@ -642,21 +642,21 @@ const questions = [
         "lesson": 43,
         "id": "43-2",
         "text": "<ruby>今週<rt>こんしゅう</rt></ruby>はどんな<ruby>天気<rt>てんき</rt></ruby>になりそうですか。",
-        "viText": "Dự kiến sẽ có loại thời tiết nào trong tuần này?",
+        "viText": "Tuần này thời tiết có vẻ sẽ như thế nào?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.2.mp3"
     },
     {
         "lesson": 43,
         "id": "43-3",
         "text": "<ruby>今<rt>いま</rt></ruby>、JLPTのN4/N3を<ruby>受<rt>う</rt></ruby>けたら<ruby>合格<rt>ごうかく</rt></ruby>できそうですか。",
-        "viText": "Nếu tôi thi JLPT N4 / N3 bây giờ, bạn có nghĩ rằng tôi có thể vượt qua không?",
+        "viText": "Nếu bây giờ bạn thi JLPT N4 / N3 , bạn có nghĩ rằng bạn có khả năng đậu không?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.3.mp3"
     },
     {
         "lesson": 43,
         "id": "43-4",
         "text": "この<ruby>人<rt>ひと</rt></ruby>を<ruby>見<rt>み</rt></ruby>てどう<ruby>思<rt>おも</rt></ruby>いますか。",
-        "viText": "Bạn nghĩ gì về người này?",
+        "viText": "Nhìn người này, bạn nghĩ như thế nào?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.4.mp3",
         "imageUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.4.jpg",
         "groupId": "group43-4"
@@ -665,7 +665,7 @@ const questions = [
         "lesson": 43,
         "id": "43-5",
         "text": "この<ruby>人<rt>ひと</rt></ruby>（Q４の<ruby>人<rt>ひと</rt></ruby>）に<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。/<ruby>話<rt>はな</rt></ruby>しかけますか。　（※「～そうですね。どうしたんですか。」）",
-        "viText": "(Đối với người 4) Bạn sẽ nói gì với người này / nói chuyện với họ?　(※ ’~Đúng vậy. Có chuyện gì vậy?’ ）",
+        "viText": "(Đối với người số 4) Bạn sẽ nói gì với người này? / Bạn sẽ bắt chuyện như thế nào? （※ Dùng mẫu「～そうですね。どうしたんですか。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.5.mp3",
         "imageUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.4.jpg",
         "groupId": "group43-4"
@@ -674,21 +674,21 @@ const questions = [
         "lesson": 43,
         "id": "43-6",
         "text": "ベトナムで<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>する<ruby>人<rt>ひと</rt></ruby>は、これから<ruby>増<rt>ふ</rt></ruby>えますか。<ruby>減<rt>へ</rt></ruby>りますか。どうなりそうですか。",
-        "viText": "Số lượng người học tiếng Nhật tại Việt Nam sẽ tăng lên trong tương lai? Nó sẽ giảm? Bạn nghĩ điều gì sẽ xảy ra?",
+        "viText": "Trong thời gian tới, số người học tiếng Nhật ở Việt Nam sẽ tăng hay giảm? Bạn dự đoán sẽ như thế nào?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.6.mp3"
     },
     {
         "lesson": 43,
         "id": "43-7",
         "text": "ベトナムで、これからどんな<ruby>仕事<rt>しごと</rt></ruby>が<ruby>人気<rt>にんき</rt></ruby>になりそうですか。",
-        "viText": "Những loại công việc nào ở Việt Nam dường như sẽ trở nên phổ biến trong tương lai?",
+        "viText": "Theo bạn, sắp tới ở Việt Nam, công việc gì sẽ trở nên được ưa chuộng?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.7.mp3"
     },
     {
         "lesson": 43,
         "id": "43-8",
         "text": "<ruby>今日<rt>きょう</rt></ruby>は、100<ruby>円<rt>えん</rt></ruby>が〇〇ドンです。<ruby>日本<rt>にほん</rt></ruby>の<ruby>円<rt>えん</rt></ruby>は　これから　どうなりそうですか。",
-        "viText": "Hôm nay, 100 yên là 〇〇 don. Bạn nghĩ điều gì sẽ xảy ra với đồng yên Nhật từ đây?",
+        "viText": "Hôm nay, 100 yên bằng ○○ đồng. Theo bạn, từ nay trở đi đồng yên Nhật có vẻ sẽ như thế nào?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.8.mp3"
     },
     //---43.9
@@ -696,56 +696,56 @@ const questions = [
         "lesson": 43,
         "id": "43-9",
         "text": "センターに<ruby>名札<rt>なふだ</rt></ruby>／スマホ／<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れて<ruby>来<rt>き</rt></ruby>ました。いっしょに<ruby>帰<rt>かえ</rt></ruby>る<ruby>友<rt>とも</rt></ruby>だちに<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。（※「～てくるから、・・・。」）",
-        "viText": "Bạn quên thẻ tên, điện thoại thông minh hoặc ví tiền ở trường. Bạn sẽ nói gì với người bạn về cùng?",
+        "viText": "",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.9.mp3"
     },
     {
         "lesson": 43,
         "id": "43-10",
         "text": "<ruby>友達<rt>ともだち</rt></ruby>がコンビニへ<ruby>行<rt>い</rt></ruby>きます。あなたは<ruby>飲<rt>の</rt></ruby>み<ruby>物<rt>もの</rt></ruby>が<ruby>欲<rt>ほ</rt></ruby>しいです。<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>を<ruby>頼<rt>たの</rt></ruby>んでください。",
-        "viText": "Bạn tôi đi đến cửa hàng tiện lợi. Bạn muốn một thức uống. Vui lòng đặt mua sắm.",
+        "viText": "Bạn của bạn đi tới cửa hàng tiện lợi. Bạn muốn mua giùm đồ uống. Hãy nhờ bạn ấy mua giúp.",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/43.10.mp3"
     },
     {
         "lesson": 44,
         "id": "44-1",
         "text": "ボールペンとシャープペンと、どちらが<ruby>使<rt>つか</rt></ruby>いやすいですか。　（※「～のほうが・・・。」）",
-        "viText": "Cái nào dễ sử dụng hơn, bút bi hay bút chì cơ?　(※ ’~ tốt hơn...’)",
+        "viText": "Giữa bút bi và bút chì kim, bạn thấy loại nào dễ sử dụng hơn? （※ Dùng mẫu「～のほうが・・・。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.1.mp3"
     },
     {
         "lesson": 44,
         "id": "44-2",
         "text": "<ruby>教室<rt>きょうしつ</rt></ruby>と<ruby>家<rt>いえ</rt></ruby>と、どちらが<ruby>勉強<rt>べんきょう</rt></ruby>しやすいですか。　（※「～のほうが…。」）",
-        "viText": "Cái nào dễ học hơn, trong lớp học hay ở nhà?　(※ ’~ tốt hơn...’)",
+        "viText": "Giữa lớp học và nhà thì nơi nào học dễ hơn? （※ Dùng mẫu「～のほうが…。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.2.mp3"
     },
     {
         "lesson": 44,
         "id": "44-3",
         "text": "<ruby>日本語<rt>にほんご</rt></ruby>でどんな<ruby>言葉<rt>ことば</rt></ruby>が<ruby>覚<rt>おぼ</rt></ruby>えにくいですか。",
-        "viText": "Những loại từ nào trong tiếng Nhật khó nhớ?",
+        "viText": "Bạn thấy những từ nào trong tiếng Nhật khó ghi nhớ?",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.3.mp3"
     },
     {
         "lesson": 44,
         "id": "44-4",
         "text": "<ruby>聴解<rt>ちょうかい</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>で、<ruby>音<rt>おと</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<ruby>小<rt>ちい</rt></ruby>さい<ruby>時<rt>とき</rt></ruby>、<ruby>先生<rt>せんせい</rt></ruby>に<ruby>何<rt>なん</rt></ruby>と<ruby>言<rt>い</rt></ruby>いますか。　　（※「～ので、Aに／Aく していただけませんか。」）",
-        "viText": "Trong lớp nghe, khi âm thanh hơi nhỏ, bạn nói gì với giáo viên?　　(※ ’Bạn có thể làm ơn /A-ku đến A, vậy ~?’",
+        "viText": "Trong giờ học nghe hiểu, khi âm thanh hơi nhỏ, bạn sẽ nói gì với giáo viên? （※ Dùng mẫu「～ので、Aに／Aく していただけませんか。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.4.mp3"
     },
     {
         "lesson": 44,
         "id": "44-5",
         "text": "<ruby>宿題<rt>しゅくだい</rt></ruby>が<ruby>難<rt>むずか</rt></ruby>しすぎます/<ruby>多<rt>おお</rt></ruby>すぎます。<ruby>先生<rt>せんせい</rt></ruby>に <ruby>何<rt>なん</rt></ruby>と <ruby>頼<rt>たの</rt></ruby>みますか。　（※「Aく/Aに　していただけませんか。」）　　",
-        "viText": "Bài tập về nhà quá khó hoặc quá nhiều. Bạn muốn hỏi giáo viên điều gì?　(※ ’Bạn có thể làm cho nó là A-ku/A không?’)　　",
+        "viText": "Nếu bài tập về nhà quá khó hoặc quá nhiều, bạn sẽ nói gì để nhờ giáo viên? （※ Dùng mẫu「Aく/Aに していただけませんか。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.5.mp3"
     },
     {
         "lesson": 44,
         "id": "44-6",
         "text": "どの<ruby>漢字<rt>かんじ</rt></ruby>と、どの<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>間違<rt>まちが</rt></ruby>えやすいと<ruby>思<rt>おも</rt></ruby>いますか。 （※「〇の<ruby>漢字<rt>かんじ</rt></ruby>と◎の<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>間違<rt>まちが</rt></ruby>えやすいです。」）",
-        "viText": "Bạn nghĩ kanji nào có nhiều khả năng sai nhất? (※ ’Thật dễ dàng để có được chữ kanji cho 〇 và ◎ cho kanji.’)",
+        "viText": "Bạn nghĩ chữ Hán nào với chữ Hán nào dễ bị nhầm với nhau?  （※Dùng mẫu「〇の<ruby>漢字<rt>かんじ</rt></ruby>と◎の<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>間違<rt>まちが</rt></ruby>えやすいです。」）",
         "audioUrl": "https://itm-kaiwa.github.io/CheckKaiwa_/44.6.mp3"
     },
     {
