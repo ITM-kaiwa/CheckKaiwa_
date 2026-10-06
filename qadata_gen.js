@@ -1,5 +1,5 @@
 // =============================================================================
-// DATA-PART: QUESTION DATA VARIABLE (qadata_gen.js) Ver3.20c
+// DATA-PART: QUESTION DATA VARIABLE (qadata_gen.js) Ver3.20d 2026-10-06
 // =============================================================================
 const questions = [
             
